@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<title> Yara Veloso</title>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+<style>
+
+body, html {
+  width: 100%;
+  height: 100%;
+font-family: times, "times new roman", serif;
+    font-size: 24px;
+    letter-spacing: -1px;
+      -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff
+  margin: 0;
+  border: 0;
+  margin-top: -10px;
+}
+
+
+.autopagerize_page_element {
+  width: 100%;
+  height: 100%;
+}
+
+.clear {
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+  float: none;
+}
+
+
+
+
+.container {
+  width: auto;
+  height: auto;
+}
+
+
+
+.post-text {
+  background-color: #fff;
+}
+
+.post.post-text {
+  height: auto;
+  min-height: 100%;
+}
+
+.post-quote {
+  background-color: #fff;
+}
+
+.post-audio,
+.post-video {
+  background-color: #fff;
+}
+
+.post-photo,
+.post-photoset {
+  background: #111 center center no-repeat fixed;
+  background-size: 32px;
+}
+
+
+.post-text + .post-text,
+.post-quote + .post-quote,
+.post-link + .post-link,
+.post-video + .post-video {
+  border-top: 5px solid #000;
+
+}
+
+.post-bg {
+  width: 100%;
+  height: auto;
+  background-position: center center;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  position: relative;
+}
+
+.photo, .photoset, .panorama, .audio {
+  min-height: 480px;
+}
+
+.post.post-photoset {
+  height: auto;
+}
+
+.post.post-photoset .post-bg {
+  height: 1000px;
+}
+
+
+.title {
+  text-align: center;
+  height: auto;
+  padding: 30px 0;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.title h1 {
+
+  margin: 0;
+  font-size: 32px;
+  word-wrap: break-word;
+}
+
+.title a:hover {
+  color: #000000;
+}
+
+.title.index-title h1 {
+  font-size: 56px;
+}
+
+.title h2 {
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+ 
+}
+
+.title.index-title h2 {
+  font-size: 24px;
+}
+
+.title a {
+  text-decoration: none;
+}
+
+a, a:link, a:active {
+  text-decoration: underline;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Text formatting*/
+
+a:link, a:visited, a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: purple;
+}
+
+#floater {
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    width: 200px;
+    border: #000 2px solid;
+    padding: 10px;
+    box-shadow: 10px 10px 5px #E0E0E0;
+}
+
+.researchquestion{
+    font-style: bold;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 18px;
+}
+.chaptertitle{
+font-weight: bold;
+color: white;
+text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px #e0e0e0;
+
+}
+
+.quotereally {
+    padding-left: 70px;
+    font-style: italic;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 22px;
+    letter-spacing: 0px;
+
+}
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+ul {
+    list-style-type: upper-roman;
+
+}
+
+.two {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+
+
+
+/* ==========================================================================
+   Photo Posts
+   ========================================================================== */
+
+article.photoset:last-child {
+  display: none;
+}
+
+/* ==========================================================================
+   Link / Quote Posts
+   ========================================================================== */
+
+
+.link h3 {
+  margin: 0 auto;
+  position: relative;
+  top: 40%;
+  font-size: 24px;
+  text-align: center;
+}
+
+.link h3 a {
+  text-decoration: none;
+  text-indent: -30px;
+}
+
+.link h3 a:hover {
+  text-decoration: underline;
+}
+
+.quote, .link {
+  padding: 60px 0 70px;
+}
+
+.quote .quote-text {
+  text-align: left;
+  position: relative;
+  -webkit-transform: translate(0,-50%);
+  -moz-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  top: 49.5%;
+  margin: 0 10%;
+  
+}
+
+
+.quote blockquote {
+  margin: 0;
+  font-size: 22px;
+  font-weight: normal;
+ 
+}
+
+.quote .source {
+  font-size: 16px;
+  font-weight: normal;
+ 
+}
+
+.quote .source a {
+  text-decoration: underline;
+}
+
+.quotedescription{
+
+font-size: 18px; 
+margin: 5px;}
+
+.cv {
+
+	-webkit-column-count: 2; 
+	-moz-column-count: 3;
+	column-count: 3;
+	font-size: 20px
+}
+
+.quotetitlecv{
+	text-decoration: underline;
+	display: inline;
+
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-device-width: 1025px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .title a {
+    opacity: 0.8;
+  }
+
+  .title a:hover {
+    opacity: 1;
+  }
+
+  .title h1 {
+    word-wrap: normal;
+  }
+
+  .title.index-title {
+    padding: 0;
+  }
+
+  .title.index-title a {
+    opacity: 1;
+  }
+
+  .title.index-title .title-text {
+    top: 20%;
+  }
+
+  .title h2 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .title-text {
+    position: relative;
+    top: 0;
+    padding: 30px 0;
+  }
+
+  .autopagerize_page_element {
+    position: relative;
+  }
+
+  .post {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+  }
+
+  .post.inline {
+    height: auto;
+    min-height: auto;
+  }
+
+  .post-bg {
+    height: 100%;
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .post-bg.tile {
+    background-size: contain;
+  }
+
+  .post-bg.fill {
+    background-size: cover;
+  }
+
+  .post-bg.center {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .quote, .link {
+    padding: 0;
+  }
+
+  .link h3 {
+    font-size: 32px;
+  }
+
+  .quote blockquote {
+    font-size: 28px;
+  }
+
+  .quote .source {
+    font-size: 20px;
+  }
+
+
+  .text {
+    padding: 80px 0 90px;
+  }
+
+
+  .text-block {
+    font-size: 20px;
+    width: 600px;
+  }
+
+
+  .video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+  }
+
+ 
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+}
+
+
+
+</style>
+
+<body>
+    
+    <div class="container index-page">
+
+      <div class="title index-title">
+        <div class="title-text">
+          
+       
+          
+          
+        </div>
+      </div>
+      
+
+
+        <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/1.jpg); background-color:#fff" alt="">
+          </div>
+
+        <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/2.jpg); background-color:#fff" alt="">
+          </div>
+
+        <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/3.jpg); background-color:#fff" alt="">
+          </div>
+
+        <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/4.jpg); background-color:#fff" alt="">
+          </div>
+
+        <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/5.jpg); background-color:#fff" alt="">
+          </div>
+
+           <article class="post post-photo">
+          <div class="photo post-bg tile" style="background-image:url(img/6.jpg); background-color:#fff" alt="">
+          </div>
+    
+
+ <article class="post post-quote">
+          
+          
+          <div class="quote post-bg" name="CV">
+
+
+
+
+
+<div class="chaptertitle" id="intro">Introduction</div>
+
+<div class="two">
+
+When I was a kid I one had this sudden realisation that people working in shops were just people. I had this idea that they were some sort of super-humans, knowing every single detail of each product they sold. They were adults in uniforms with logos on them, and that obviously meant they knew everything. 
+<br/> <br/>
+
+If you think about it, however, the idea of credibility in our everyday environment comes mostly from aspects of uniformity: wearing the same shirt, with the same logo, accompanied by actions like standing behind the counter and walking around with a name card on a strap around your neck.
+<br/> <br/>
+
+Around the same time, I was determined to be a journalist. I devoured books faster than my mum could buy new ones to keep me distracted, and the idea of having my own newspaper one day was one I entertained quite often. A lucky situation then arose: I got my first computer. At the time, I was about twelve years old, and the possibilities of having your own personal space on the web were enhanced by a multitude of blog platforms like BlogSpot and Wordpress, usually free services with a selection of templates, offering a subdomain that you’d benefit from while still promoting the service that made it possible. This gave me an opportunity that before I had only come close to by making my handwritten booklets that I’d give to my parents and whoever was interested: I could have my own platform. And with a template I had achieved a level of credibility I had never got close to with my scribbled stapled A4’s.
+<br/> <br/>
+
+Yet another significant realisation I had was while looking for more templates that would fit whatever design concerns I had at the time, and stumbled into an “about the webmaster page” of a blog I liked, most likely in the hopes of finding out where they got their template from. To my surprise, not only the author of this blog was only a few years older than me, but she had also managed to design her own page. Her header was some sort of digital collage of different pictures, some of them were of people and the others were of strawberries, because it was about a popular Portuguese TV show for young people called “Strawberries With Sugar”. 
+<br/> <br/>
+
+So, in a short period of time, I realised brands are made of normal people, anyone could have their own platform on this amazing thing called the Internet, I could make advanced collage work by downloading all this software I could barely pronounce and following tutorials made by a growing community of (mostly) teenagers with an Internet access. It was profoundly groundbreaking for someone who previously assumed that only a group of experienced middle-aged men (probably in uniforms) could have combined people and strawberries in such an effortless fashion.
+<br/> <br/>
+
+Both of these epiphanies are connected due to their demystifying nature: weather it was triggered by a newly hired and therefore still clueless employee at a shop or by an honest first-person account on their self-designed fanblog, it enabled me to deconstruct a reality that before seemed out of reach. 
+<br/> <br/>
+
+Of course that at the mere age of twelve I did not think of it as the sudden realisation of the several mediatic strategies I was surrounded by, or the influence that shaping the very same media I was consuming would have on my perception of visual culture and how it could be related to events such as the digital revolution. I thoroughly enjoyed adding up to the constant flow of digital collages featuring celebrities and fruits, or any other trend I could replicate with the skills I gained in the privacy of my own house. However, it was the self-reflective exercise that preceded the writing of this thesis that led me to see the importance of these events. 
+<br/> <br/>
+
+The practical process of creating the very same media I was consuming, enabled by the availability of a desktop computer and the access to the Internet, allowed me to engage with it in an entirely new and different way. The starting point of this thesis was thus the connection between a digital literacy fostered by the advent of digital technology, and a more critical understand of the media that surrounded me. 
+<br/> <br/>
+
+The development of the younger generations’ understanding of media is one that is undoubtedly linked to technology developments, that are also a major factor in the widening of the so-called “generation gaps” of the past. With a goal of creating a body of work that is as contextually and historically aware as it is technology progressive, I’ve structure this thesis into four articles that focus on our perception of media, more specifically visual culture, throughout three major technological developments: The invention of the printing press, the Industrial Revolution and the Digital Revolution. 
+<br/> <br/>
+
+While my interest on the topic is clearly relevant from my point of view as a graphic designer it starts by addressing issues that relate to visual art, as the endeavour of giving an appropriate contextual basis for graphic design relies also on the broader topics of visual studies and art history in order to address society’s relationship with a culture where the visual is progressively more dominant.
+<br/> <br/>
+
+
+
+</div>
+
+  </article>
+
+
+
+
+
+
+
+ <article class="post post-quote">
+          
+          
+          <div class="quote post-bg" name="CV">
+            <div class="quote-text">
+
+
+              <blockquote class="words short">
+
+<a name="CV"></a> 
+Curriculum Vitae<br>
+<div class="cv">
+Yara Veloso<br>
+Phone: (+31)616047236<br>
+E-mail: velosoyara@gmail.com <br>
+Nationality: Portuguese/Brazilian<br>
+<br>
+
+Education <br>
+<p class="quotetitlecv">École Cantonale d'Art de Lausanne (ÉCAL)<br></p>
+Lausanne, Switzerland (2015)<br>
+<br>
+<p class="quotetitlecv">Royal Academy of Art (KABK)<br></p>
+The Hague, The Netherlands (2012-present)<br>
+<br>
+
+<p class="quotetitlecv">London College of Comunication<br></p>
+London, England, UK (2012)<br>
+<br>
+<p class="quotetitlecv">Antonio Arroio Artistic High School<br></p>
+Lisbon, Portugal (2008-2011)<br>
+<br>
+
+Languages <br>
+<p class="quotetitlecv">English</p>•••• <p class="quotetitlecv">Portuguese</p>•••• <p class="quotetitlecv">French</p>•• <p class="quotetitlecv">Dutch</p>•• <br>
+
+ <p class="quotetitlecv">HTML</p>•••• <p class="quotetitlecv">CSS</p>•••• <p class="quotetitlecv">Javascript</p>••  <p class="quotetitlecv">PHP</p>•• <br>
+ <p class="quotetitlecv">Processing</p>•• <p class="quotetitlecv">Arduino</p>••
+<br>
+
+<br>
+<br><br> <br>
+
+
+
+Exhibitions and other<br>
+
+<p class="quotetitlecv">Graphic Arts</p><br>
+Standupgallery, The Hague, 2014<br><br>
+
+<p class="quotetitlecv">Student exhibition</p><br>
+Chaumont Design Graphique, 2014<br><br>
+
+<p class="quotetitlecv">On Responsibility<br></p>
+Pip, Den Haag, 2014<br>
+<br>
+<p class="quotetitlecv">This is The School and the School is Many Things<br></p>
+Royal Academy of Art, 2013 <br><br>
+
+<p class="quotetitlecv">Relation Gift design for the Supreme Court of The Netherlands<br></p>
+group project, 2013 <br><br>
+
+<p class="quotetitlecv">Nature (Editions)<br></p>
+Royal Academy of Art, 2013<br><br>
+<p class="quotetitlecv">Typographical Karaoke</p>
+<br>
+Depot BG, Amsterdam, 2013<br></p><br>
+</div>
+
+</blockquote>
+
+ <blockquote class="words short2">
+<p class="quotedescription">
+
+</blockquote>
+
+            </div>
+          </div>
+  </article>
+
+
+
+
+</body>
+
+</html>
