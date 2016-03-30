@@ -11,7 +11,7 @@
         <!-- The classical Cartesian distinction, head and body!
             In the head comes all the metadata the page needs to function-->
 
-        <title>Chapter 1</title> 
+        <title>Everything is Made: Chapter I</title> 
 
         <meta charset="utf-8"/> <!-- accents -->
 
@@ -184,12 +184,15 @@ height:88vh;
 /* Text formatting*/
 
 a:link, a:visited, a:active {
-    color: blue;
+    color: #000;
     text-decoration: none;
+    font-family: arial, 'sans-serif';
 }
 
 a:hover {
-    color: #fff;
+    text-decoration: underline;
+
+
 }
 
 
@@ -233,7 +236,8 @@ padding-top: 10px;
 }
 
 ul {
-    list-style-type: upper-roman;
+    list-style-type: circle;
+    list-style-position: outside;
 
 }
 
@@ -362,45 +366,32 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     display: inline-block;
     font-size: 24px;
     letter-spacing: 0px;
-    right: 38%;
 
 
 
   }
 
   .dropdown-button {
-    float: right;
+    float: left;
     padding-left: 5px;
     padding-right: 5px;
-    font-size: 18px;
-    font-family: arial;
-    letter-spacing: 1px;
-
+    letter-spacing: -1px;
+    cursor: context-menu;
 
   }
 
-  
-
-.dropdown-button a:link, .dropdown-button a:active {
-  color: #000;
-} 
-
-.dropdown-button a:hover {
-  color: red;
-} 
 
 .dropdown-content {
     display: none;
     position: absolute;
    background-color:   #fffffc;
-    min-height: 14em;
     padding: 5px 7px;
     z-index: 200000;
     bottom: 100%;
-    font-size: 20px;
+    font-size: 28px;
     padding-left: 20px;
-    border: 2px solid #000;
-
+    border: 3px solid #000;
+    width: 250px;
 
 
   
@@ -453,6 +444,21 @@ column-break-inside:avoid;
 sup, sup a:link, sup a:hover, sup a:active {
   font-family: arial; display: inline; font-size: 14px; color: gray;}
 
+  .fuckingtransition {
+  font-family: arial, sans-serif;
+
+
+}
+
+.fuckingtransition a:link, .fuckingtransition a:active, .fuckingtransition a:visited {
+  text-decoration: none;
+    font-size: 48px;
+}
+
+.fuckingtransition a:hover {
+  text-decoration: underline;
+}
+
 </style>
 
     </head>
@@ -464,8 +470,25 @@ sup, sup a:link, sup a:hover, sup a:active {
 <div id="thing"> 
 
   <div class="dropdown">
-  <span class="dropdown-button"> <a href="#index">Table of Contents</a></span>
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
   
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+              <li><a href="index.html">Index</a></li> 
+        <li><a href="intro.html">Introduction</a></li> 
+        <li style="list-style-type: disc;" title="You are here right now, silly!"> <a href="chapter1.html">Chapter I </a> </li>
+        <li><a href="chapter2.html">Chapter II</a></li>
+        <li><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+
+    </ul>
+
+  </div>
+
+ 
+</div>
 
 </div>
 
@@ -511,7 +534,7 @@ sup, sup a:link, sup a:hover, sup a:active {
 
 <div class="text">
  
-<p style="text-align: center; font-family: arial;"> Chapter 1: </p>
+<p style="text-align: center; font-family: arial;"> Chapter I: </p>
 
    <h1>
     The printing press, art history and 
@@ -738,69 +761,18 @@ Curator Hans-Ulrich Obrist, In occasion of the launch of his book <i>Lives of th
 
 
 The idea of divine genius is a culturally determined concept, that has made its way into our collective consciousness. Giving the artist special qualities puts him on a pedestal where he cannot be judged by the values that we know, as he is above them, and thus cannot be subject to any sort of critical thinking that would, in turn, allow the adequate development of the creative practice. It represents an empty promise and an outdated concept of authorship. Lastly, the <i>“individuals reared under the impact of these forms”</i> could be extended to addressing more than an audience that is interested or directly exposed to the development of artistic forms, but everyone who is raised in a world where the social and cultural impact of art and visual culture is more and more prominent. 
+<center>
 
+  <br><br><br>
 
-  <BR><BR><BR><BR><BR><BR><BR><BR>  <BR><BR><BR><BR><BR><BR><BR><BR>
-  <BR><BR><BR><BR><BR><BR><BR><BR>
-  <BR><BR><BR><BR><BR><BR><BR><BR>  <BR><BR><BR><BR><BR><BR><BR><BR>
-
-
-
-
-
-<div id="index">
-
-<div class="dropdown">
-  <span class="dropdown-button"> Info</span>
-  <div class="dropdown-content">
-<h3>I don't have a research questions pls help meh</h3>
- <br>
-    Bachelor Thesis of Yara Veloso <br><br>
-    Table of Contents <br>
-    References<br>
-    Acknowledgements<br>
-KABK<br>
-GRaphic Design department<br>
-2015/2016<br>
-
-
-<br>
-
-  </div>
-
-
-<h3>Table of Contents</h3>
-
-<ul> 
-<li><a href="introduction.html">Introduction</a></li>
-<li><a href="#">Chapter I</a></li>
-<li><a href="chapter2.html">Chapter II</a></li>
-<li><a href="introduction.html">Chapter III</a></li>
-<li><a href="introduction.html">Chapter IV</a></li>
-<li><a href="introduction.html">Conclusion</a></li>
-<li><a href="introduction.html">Sources</a></li>
-<li><a href="introduction.html">Acknoledgements</a></li>
-
-
-
-
-
-</ul>
-    Bachelor Thesis of Yara Veloso <br>
-    Table of Contents <br>
-    References <br>
-    Acknowledgements<br>
-KABK<br>
-Graphic Design department<br>
-2015/2016<br>
-
-
-  <h3> Chapter Two </h3>
+<div class="fuckingtransition"> <a href="chapter2.html">Chapter 2 →</a></div>
+</center>
 
   <BR><BR><BR><BR><BR><BR><BR><BR>  <BR><BR><BR><BR><BR><BR><BR><BR>
   <BR><BR><BR><BR><BR><BR><BR><BR>
 
-</div>
+
+
 
 
 

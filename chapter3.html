@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='img/favicon2.ico' />
+
+        <!-- The classical Cartesian distinction, head and body!
+            In the head comes all the metadata the page needs to function-->
+
+        <title>Everything is Made: Chapter III</title> 
+
+        <meta charset="utf-8"/> <!-- accents -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <!-- Stops mobile browsers from ‘zooming out’: this allows you to create specific layout for mobile -->
+
+        <!-- A short description of the page: -->
+        <meta name="description" content="This is my thesis sketch">
+                
+        <!-- This is the title used by Facebook/Twitter: they recommend to leave out the site name -->
+        <meta property="og:title" content="Example Thesis Document" />
+        <!-- This is the the preview image used by Facebook/Twitter.
+             Facebook currently prefers a 1200x630 image
+             Import: this has to be an absolute url including the domain name -->
+        <meta property="og:image" content="http://kabk.github.io/govt4-coding/preview_image.png" />
+        
+
+        <!-- This metadata encodes the author of the page. It is currently not used by Facebook, Twitter,
+             but the script generating our index does use it. -->
+        <meta property="dc:creator" content="Veloso, Yara"/>
+
+        <!-- When you first published the page, and when it was last modified -->
+        <meta property="dc:created" content="2015-12-05T00:00:00Z" />
+        <meta property="dc:modified" content="2015-12-05T00:00:00Z" />
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
+        
+        <!-- The JavaScript files we don’t link here but at the end of the file -->
+
+
+
+<script>
+function myFunction1() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    body.scrollLeft += 0;
+    body.scrollTop += 60;
+    html.scrollLeft += 0;
+    html.scrollTop += 60;
+}
+</script>
+
+
+<script>
+function myFunction2() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    body.scrollLeft += 0;
+    body.scrollTop += -60;
+    html.scrollLeft += 0;
+    html.scrollTop += -60;
+}
+
+</script>
+
+
+
+<style>
+
+body,html {
+    font-size: 22px;
+    letter-spacing: 1px;
+   color:   #fffffc;
+   background-color: #000;
+     margin: 0;
+    padding: 0;
+    height: 100%;
+      margin: 0;
+    padding: 0;
+
+
+}
+
+#wrapper {
+    position:absolute;
+    top: 0px;
+    left: 22%;
+  margin: 0;
+    padding-left: 80px;
+    width: 70%;
+font-family: times, 'times new roman', serif;
+    letter-spacing: 0px;}
+
+#background {
+  width: 20%;
+  padding: 15px;
+
+}
+
+::selection {
+  background: #fff;
+  color: #000; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #fff;
+  color: #000; /* Gecko Browsers */
+}
+
+.img_caption {
+  padding: 5px;
+  font-size: 15px;
+  float: left;
+  margin-right: 10px;
+}
+
+.footnotes {
+  font-size: 15px;
+  float: right;
+  width: 35%;
+  padding: 20px;
+
+}
+
+.text {
+    letter-spacing: 0px;
+      font-family: arial, 'sans-serif';
+
+  }
+
+
+
+/* TEXT FORMATTING */
+
+a:link, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+    font-family: arial, 'sans-serif';
+}
+
+a:hover {
+    text-decoration: underline;
+
+
+}
+
+
+.footnotes {
+  font-size: 12px;
+  float: right;
+  width: 35%;
+  padding: 20px;
+  font-family: arial;
+  color: gray;
+
+}
+
+sup, sup a:link, sup a:hover, sup a:active {
+  font-family: arial; display: inline; font-size: 14px; color: gray;}
+
+
+.quote {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;
+}
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  
+}
+
+h3 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 40px;
+   text-align: center;
+   font-weight: normal;
+   
+
+}
+
+h1 a:link, h1 a:active, h1 a:visited {
+color: red;
+text-decoration: none;
+font-family: times, 'times new roman', serif;
+
+}
+
+h1 a:hover {
+text-decoration: none;
+color: blue;
+
+}
+
+h1 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 3em;
+   text-align: center;
+   font-family: times, 'times new roman';
+}
+
+
+
+ul {
+    list-style-type: circle;
+    list-style-position: outside;
+
+}
+
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  
+}
+
+
+
+
+
+
+#thing {
+    height: 15px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    background: #000;
+    z-index: 10000;
+    left: 0px;
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-left: 2.5em;
+    display: block;
+
+
+}
+
+.thingtext {
+    font-size: 24px;
+      margin-right: 40px;
+
+}
+
+
+/* FUCKING MENU */
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0px;
+
+
+
+  }
+
+  .dropdown-button {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: -1px;
+    cursor: context-menu;
+
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+   background-color:   #fff;
+    padding: 5px 7px;
+    z-index: 200000;
+    bottom: 100%;
+    font-size: 28px;
+    padding-left: 20px;
+    border: 3px solid #000;
+    width: 250px;
+    color: #000;
+
+
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:link, .dropdown a:active {
+  color: #000;
+
+}
+
+
+.dropdown-content a:hover .dropdown-content {
+    display: block;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 115px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 5px ;
+    border: 3px solid blue;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 100000000;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+   .container { font-size: 0.5em;  }
+   .next, .prev { font-size: 1em; }
+   .next {right: 20px;}
+   .prev {left: 20px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+   .text { font-size: 0.7em; }
+ }
+
+
+@media only screen and (max-width: 960px) {
+   .text { font-size: 0.8em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+@media only screen and (max-width: 1200px) {
+   .container { font-size: 0.5em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+ol li{
+-webkit-column-break-inside:avoid;
+-moz-column-break-inside:avoid;
+-o-column-break-inside:avoid;
+-ms-column-break-inside:avoid;
+column-break-inside:avoid;
+}
+
+sup, sup a:link, sup a:hover, sup a:active {
+  font-family: arial; display: inline; font-size: 14px; color: gray;}
+
+
+  
+
+textarea {
+    width: 200px;
+    padding: 10px;
+    font-size: 22px;
+    outline: none;
+    resize:both;
+    height:300px;
+    border: none;
+}
+
+
+
+button {
+    overflow: hidden;
+  border: 2px solid;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: -3px;
+
+    border-radius: 20px;
+    color: black;
+    -webkit-appearance: none;
+    -moz-box-shadow: 4px 4px 0px rgba(68,68,68,0.33);
+    -webkit-box-shadow: 4px 4px 0px rgba(68,68,68,0.33);
+    box-shadow: 4px 4px 0px rgba(68,68,68,0.33);
+    font-size: 40px;
+    margin-right: 20px;
+    background-color: #fff;
+}
+
+
+#boxnext {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+   margin: 0 auto;
+    left: 0px;
+     bottom: 200px;
+}
+
+#boxprev {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+   margin: 0 auto;
+    top: 0px;
+   left: 0px;
+}
+
+#boxnext, #boxprev {
+
+margin-left: 20%;
+
+}
+
+.next, .prev {
+  cursor: pointer;
+}
+
+
+.resize1 {
+    border: 5px solid #000;
+color: #000;
+    padding: 20px; 
+    resize: both;
+    overflow: auto;
+    position: relative;
+            letter-spacing: 0px;
+            width: 50px;
+            height: 30px;
+            background: #fff;
+            display: inline-block;
+
+
+          }
+
+          h4 {
+            font-weight: normal;
+            font-family: arial;
+            color: blue;
+
+
+          }
+
+          .fuckingtransition {
+  font-family: arial, sans-serif;
+
+
+}
+
+.fuckingtransition a:link, .fuckingtransition a:active, .fuckingtransition a:visited {
+  text-decoration: none;
+    font-size: 48px;
+}
+
+.fuckingtransition a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+    </head>
+
+
+       <body>
+         
+<div id="thing"> 
+
+  <div class="dropdown">
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
+  
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+                    <li><a href="index.html">Index</a></li> 
+
+        <li><a href="intro.html">Introduction</a></li> 
+        <li> <a href="chapter1.html">Chapter I </a> </li>
+        <li ><a href="chapter2.html">Chapter II</a></li>
+        <li style="list-style-type: disc;" title="You are here right now, silly!" ><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+
+</div>   <!-- closing of thing-->
+</div>   <!-- closing of dropdown-->
+</div>   <!-- closing of dropdown-content-->
+
+
+<div id="background">
+
+
+ <p style="text-align: center; font-family: arial;"> Chapter III: </p>
+
+   <h1>
+
+
+
+
+What are the correlations between Punk and the Web?
+
+</h1>
+
+
+
+
+</div>
+
+
+
+<div id="wrapper">
+
+  
+
+
+
+
+<div class="resize1" style="width: 20px; height: 50px;"> <h4>A</h4>
+
+<br> 
+
+The growing consumer culture pushed forward by the advent of industrial technology throughout the 19th century enabled art to be widely established as a commodity. One art form that is particularly linked to this phenomenon is one that, in its nature, does not rely on objects or imagery but would not exist in its known format without it: music.
+<br>
+
+By the 1970’s music was established as part of an entertainment industry, in itself a cultural commodity. Propelled by the advent of the radio and development of the recording industry, music had had the technical possibilities and previous exposure to now be successfully distributed to larger audiences. Bands like Led Zeppelin, The Who and Queen were widely popular. Their music was distributed and performed around the world, often in large venues and to a massive crowd that had paid to support the space, the complex musical equipment and the glorified, celebrity status of these musicians, who were now worshipped as artists, sex symbols, fashion icons and individuals. Rock as a movement was simultaneously part of a commercial product and a cultural phenomenon, and both of these aspects influenced and limited each other. The music industry used the cultural relationships developed around music by a sub-culture of youngsters as the raw material for the manufacture of their product. Once rock proved to me more than just music, the engine of commerce made the best out of it.
+
+  <br> <br>
+ As consumer culture is based on the production of goods in large quantities, these had to appeal to the biggest number of people possible, without actually making it necessary getting to know every single one of them, and thus the concept of the “average consumer” was born. As individuality became a statistic for industries and advertisers, its effects on music became clearer and clearer, and the punk movement that emerged in the mid 1970’s addressed these issues by placing itself outside the mainstream, capitalism and consumerist media and creating its own methods of recording, producing, performing and distributing its products. These were independent pursuits that actively avoided involvement with the establishments normally associated with them: mainly record labels, promoters and the press. 
+
+
+</div>
+
+
+
+
+
+
+<div class="resize1" style="width: 130px;"> 
+  <h3 style="font-family: arial;
+            color: blue;">case</h3>
+
+
+The aesthetics of punk music are aggressive, straight-forward and accessible. The aggression inherent to punk is due to its existence as an act of insubordination. It says “no” to established modes of recording, commercialising and presenting music, by several means in which it bridged the gap between media and media consumer. The accessibility in it stems largely from its almost self-explanatory simplicity. Distancing itself from the glorified solos in rock music, a lot of punk songs required basic knowledge of music to be performed. The audiences were often included in these acts, invited to jump on stage, or joined in the crowd by the ones performing. Jumping off the pedestal or inviting the audience to climb onto it and see the view is part of the punk ethos. Its place outside of any industry also implied a rare access to any sort of industrial equipment and so the posters, flyers, album packaging and zines matched its music from the perspective that they displayed a varying, yet always present level of amateurism. Fighting the modern world consumerist idea of relying on others to satisfy needs, the do-it-yourself nature of punk showed people what they could do on their own, and with each other by lowering thresholds and empowering an audience that was no longer passive. 
+
+</div>
+
+
+<div class="resize1" style="width: 130px; height: 60px;"> <h3 style=" font-family: arial;
+            color: blue;">study</h3>
+  <br>
+
+
+The D.I.Y. aspect of punk is one of the most important factors fueling the subculture. Its solidification and broadening as an ethos can be traced back to a wave of perceived rebellion and experimentalism of the late 1960’s and early 1970’s . One of the hallmarks of this movement was the self-published “The Whole Earth Catalog”, by the young American visionary Stewart Brand, who did it by using basic typesetting and lay-outing tools. The first issue, subtitled “Access to tools”, was published in 1968 and it was an index of informational tools (often technical books), professional journals, courses, classes as well as carpenter’s, mason’s and garden tools and even early personal computers. Later editions saw a growing number of personal recommendations and reviews of everything from computational physics to goat husbandry. By including contact information of the manufacturer, lacking in ads and rich in personal comments it offered an alternative view of approaching the consumption of commodities.
+
+
+</div>
+
+<br>
+
+
+<div class="resize1" style="height: 45px;"> <h4>on</h4>
+  <br>
+Brand’s vision promoted “the power of the individual to conduct his own education, find his own inspiration, and share his adventure.”.  The Whole Earth Catalogue, described by Steve Jobs as “The Internet before the Internet”, represented information technology before it even had its place in society. In 1985, it also became a model for one of the most influential computer networks to date—the Whole Earth ’Lectronic Link (or WELL). Founded by Stewart Brand and computer entrepreneur Larry Brilliant, the WELL was a teleconferencing system within which subscribers could dial up a central computer and type messages to one another. It was created as a means to extend the readership of the Whole Earth Catalogue but its value extended into a way of recreating the countercultural ideal of a shared consciousness in a new “virtual community”, a term coinedby its users.
+</div>
+
+<div class="resize1" style="width: 300px; height: 130px;"> <p style="font-size: 55px; font-family: arial;
+            color: blue;">participatory</p>
+
+Internet and collaborative communities is a notion that departed from the creation of WELL and that became popular as soon as the Web gained its place in the mainstream. For users, the availability of digital technology meant that the same machines that had previously been associated with the instruments of post-war technocracy had now gained an entirely new cultural meaning and even beencoined by Brand as a “personal computer”. These developments allowed a sharp increase of internet participants at the time. In his book Web, from 1999,  Tim Berners-Lee noted “I never intended HTML source code...to be seen by users...But the human readability of HTML was an unexpected boon. To my surprise, people quickly became familiar with the tags and started writing their own HTML documents directly.”. The rapidly growing involvement that the Web triggered in its users meant that they were simultaneously subject to its social impact and also the main source of its cultural foundation. Since 1993, the same year the browser Mosaic was launched, increasing the accessibility of the Internet by supporting multiple Internet protocols, a broad spectrum of people using the Internet as a canvas for autonomous projects would enter this new digital landscape. Without necessarily identifying or addressing themselves as artists in personal or institutionalised ways they were consequently free of the conventions of the art system and relied on the personal and collaborative discovery of this new medium, establishing what is now referred to “net.art” as an artistic movement grounded in a sense of community(1). 
+</div>
+
+<div class="resize1" style="width: 150px;"> <h3 style="font-family: arial;
+            color: blue;">cultures,</h3>
+ 
+
+
+<div class="quote">
+“To write about art on the Internet is to try to fix in words a highly unstable and protean phenomenon. This art is bound inextricably to the development of the Internet itself, riding the torrent of furious technological progress that brings back into illumination antique visions of modernism, torn from matter and hurled into the ether, and so made suddenly and curiously new.” </div>
+<div class="caption">
+Julian Stallabrass,  2003, <u>Internet Art. The Online Clash of Culture and Commerce </u>. Tate Publishing. London
+</div>
+
+
+<br>
+
+The fact that the Internet is a framework which provides material to net.art is essential. It relied on the network structure of the web as a medium, tool and content for progress as well as a variety of affairs related to the tradition and modes of the art practice: production, publication, distribution, promotion, dialogue, consumption and critique. It did so while distancing itself from the ideological dimensions of the institutions of art and culture while establishing modes of practice based on its unique possibility of production, distribution and accessibility. As a broader moving force to its core values, the lack of previously solidified traditions, inherent to the fact it was a result of new and there unknown technology, enabled net.art to create its own meanings and values. The belief on the network’s values is also evident in the embracing of collaborative modes of production and consequent questions of authenticity, reinforced by the culture of appropriation of found images, democratic view of both material and final products and general disregard of copyright policies.
+</div>
+<br>
+
+
+<div class="resize1" style="height: 130px; width: 150px;"> <p style="font-size: 55px;  font-family: arial;
+            color: blue;">digital</p>
+ 
+The social responsibility and critique is intrinsic to the position, language and aesthetics of net.art. Early net art often used the Internet’s coded existence as a central thematic in the works. By making the underlying code the central focus, it effectively turns the Internet in-side out. The works are often rather chaotic and abstract layers of code which challenge the user’s visuality and navigation patterns on the web. By questioning structures such as the navigation window and challenging their functionality, net.artists have shown that what is considered to be natural by most Internet users is actually highly constructed and often controlled by corporations. The interaction with and from a new medium and the growing relevance of digital technology allowed net.art to be instantly self.referential (1). Net.artists attempted to address the social and political aspects of being a user on the Web, while not distancing themselves from the audience due to the lack of concepts of hierarchy based on the <textarea style="display: inline-block; width: 130px; height: 13px; overflow: hidden;">participatory</textarea> nature of the decentralised social structure of the Web. 
+</div>
+
+<div class="resize1" style="width: 200px;"> <h3 style=" font-family: arial;
+            color: blue;">technology</h3>
+ 
+
+Both the Punk movement and the Internet, particularly net.art as the peak of the early Web’s cultural impact and expression, have relied on similar values while simultaneously representing existing disciplines and methods of practice in a new context. Whilst the rejection of models of classification that characterised and placed Punk out of the mainstream stemmed originally from the desire to counteract a culture of comsumption, the same pursuit achieved by net.art was primarily a result of entering of new territories and engaging with a new medium and creative processes. Art on the Internet did not signify a status declared by institutions and so, it relied on the perceived success of its products, based on the response of the audience, and the relevance they had in the context they were received. 
+</div>
+
+
+<div class="resize1" style="height: 50px;"> <h4>and</h4>
+
+
+
+The <textarea style="display: inline-block; width: 130px; height: 13px; overflow: hidden;">participatory</textarea> aspect of both movements relied on their comparable social structure. The network social structure present on the Internet due to its dependence on that specific technology was embraced by net.artists and the sense of community distinctive of the punk ethos was an actively pursued choice. An example is the engagement in the self-production of Zines and other mediums of information or promotion was part of the conscious position of Punk as outside the realm of conventional consumption and entertainment. 
+</div>
+
+<br>
+
+<div class="resize1" style="width: 330px; height: 130px;"> <p style="font-size: 55px;  font-family: arial;
+            color: blue;">engagement.</p>
+  <br> <br> 
+
+<div class="quote">
+  The artist duo Jodi was lucky enough to be given server space to experiment on in 1995 by the IUMA, the Internet Underground Music Archive, based in Santa Cruz. […]It exemplified the DIY attitude that was and is operative in most online communities.” </div>
+<div class="caption">Brouwer, Joke, 2004, <u>ARt & D: Research and Development in in the New Art Practice</u></div>
+
+<br>
+
+The <textarea style="display: inline-block; width: 130px; height: 13px; overflow: hidden;">participation</textarea> in media production is not the only method to achieve media literacy but one that is behind the growing paradigm of authorship that has developed since the 19th century, from DIY movement to the contemporary digital era. <textarea style="display: inline-block; width: 130px; height: 13px; overflow: hidden;">Participatory</textarea> culture, in its varying formats represents both a reference and an opposition to consumer culture and the opposition to being a member of a passive audience. Counteracting the impact of cultural commodities by learning how to find and give value to personal meaning in the inevitable media reality shaped by others. As Howard Besser so eloquently prophesised in an article in Wired Museum, “that the public would come to “view culture less as something to consume and more as something to interact with.”. Technological developments have enabled new venues for communication, collaboration and circulation of ideas and therefore increased the level of the audience’s exposure and understanding of media, art and its underlying structures and promises of “truth”. However, more than relying solely on technology to educate an audience that is progressively more aware, it is important, and perhaps a responsibility of the producer of any medium of visual culture, to also cultivate these changes. 
+
+<br><br>
+
+<center>
+
+  <br><br><br>
+  
+<div class="fuckingtransition"> <a href="conclusion.html">Conclusion →</a></div>
+</center>
+
+
+<br>
+<h4>Chapter references </h4>
+
+Brouwer, Joke, 2004, <u>ARt & D: Research and Development in in the New Art Practice</u>.
+
+<br><br>
+
+Cormode, Graham, 2008, <a href="http://firstmonday.org/ojs/index.php/fm/article/view/2125/1972"><u>Key difierences between Web 1.0 and Web 2.0</u></a>.
+<br><br>
+Gardiner, Hazel; Bailey, Chris, 2012, <u>Revisualizing Visual Culture</u>, Ashgate Publishing.
+<br><br>
+Green, Rachel, 2000, <u>Web Work: A history of internet art</u> <i>in</i> Art Forum Magazine.
+<br><br>
+Moran, Ian P. 2010, <u>Punk: The Do-It-Yourself Subculture</u>. Western Connecticut State University’s Social Sciences Journal, no. 1
+<br><br>
+Kafai, Yasmin B.; Peppler, Kylie A., 2011, <u>Youth, Technology, and DIY: Developing Participatory Competencies in Creative Media Production – Review of Research in Education</u>. Itasca, IL: F.E. Peacock Publishers, 2011. 
+<br><br>
+Ludovico, Alessandro. <u>Post-digital Print: The Mutation of Publishing since 1894</u>. Eindhoven: Onomatopee, 2012. 
+<br><br>
+Turner, Fred. 2006, <u>From Counterculture to Cyberculture: Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism</u>. Chicago: University of Chicago Press, 2006. 
+<br><br>
+Turlington, Matthew, <a href="http://www.doctorhugo.org/review.html"><u>History of Internet Art</u></a>, review by Matthew Turlington
+<br><br>
+Merryman,John Henry ; Elsen, Albert Edward and Urice, Stephen K. ; 2007, <u>Law, Ethics, and the Visual Arts</u>
+<br><br>
+Dresser, Thomas, 2012, <a href="http://dreher.netzliteratur.net/5_Netart_Titel.html"> <u>History of Computer Art</u> </a>.
+<br><br>
+
+
+</div>
+
+
+
+<br> <br>
+
+
+
+
+
+<BR><BR>
+
+
+
+
+</div>
+
+
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+   
+    </body>
+    
+</html>
