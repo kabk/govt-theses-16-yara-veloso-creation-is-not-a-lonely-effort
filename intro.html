@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='img/favicon2.ico' />
+
+        <!-- The classical Cartesian distinction, head and body!
+            In the head comes all the metadata the page needs to function-->
+
+        <title>Everything is Made: Introduction</title> 
+
+        <meta charset="utf-8"/> <!-- accents -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <!-- Stops mobile browsers from ‘zooming out’: this allows you to create specific layout for mobile -->
+
+        <!-- A short description of the page: -->
+        <meta name="description" content="This is my thesis sketch">
+                
+        <!-- This is the title used by Facebook/Twitter: they recommend to leave out the site name -->
+        <meta property="og:title" content="Example Thesis Document" />
+        <!-- This is the the preview image used by Facebook/Twitter.
+             Facebook currently prefers a 1200x630 image
+             Import: this has to be an absolute url including the domain name -->
+        <meta property="og:image" content="http://kabk.github.io/govt4-coding/preview_image.png" />
+        
+
+        <!-- This metadata encodes the author of the page. It is currently not used by Facebook, Twitter,
+             but the script generating our index does use it. -->
+        <meta property="dc:creator" content="Veloso, Yara"/>
+
+        <!-- When you first published the page, and when it was last modified -->
+        <meta property="dc:created" content="2015-12-05T00:00:00Z" />
+        <meta property="dc:modified" content="2015-12-05T00:00:00Z" />
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
+        
+        <!-- The JavaScript files we don’t link here but at the end of the file -->
+
+
+
+<script>
+function myFunction() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    body.scrollLeft += 1407;
+    body.scrollTop += 0;
+    html.scrollLeft += 1407;
+    html.scrollTop += 0;
+}
+</script>
+
+
+<script>
+function myFunction2() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    body.scrollLeft += -1407;
+    body.scrollTop += 0;
+    html.scrollLeft += -1407;
+    html.scrollTop += 0;
+}
+
+</script>
+
+
+
+<style>
+
+body,html {
+    font-family: times, "times new roman", serif;
+    font-size: 28px;
+     margin: 0;
+    padding: 0;
+
+
+}
+
+.blue {
+  background-color: #00f;
+}
+#wrapper {
+}
+
+#side1 {position: fixed; width:35%; border-right: 5px solid #000; height: 100%; padding-right: 10px;}
+#side2 {position: absolute; margin: 0 auto; left: 0; right: 0; padding: 30px; width: 70%; }
+
+
+
+
+/* Text formatting*/
+
+a:link, a:visited, a:active {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+}
+
+
+
+
+
+.quote {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+   text-decoration: underline;
+
+}
+
+h3 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 30px;
+   text-align: center;
+
+}
+
+h1 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 3em;
+   text-align: center;
+}
+
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width:30px;
+    height: 100vh;
+    background-color: red;
+    color: #fff;
+}
+
+.chapeu {
+    height: 30px;
+    background-color: red;
+    color: #fff;
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+   .container { font-size: 0.5em;  }
+   h1 {font-size: 2.5em}
+   h3 {font-size: 2.5em}
+
+}
+
+@media only screen and (max-width: 480px) {
+   .text { font-size: 0.7em; }
+ }
+
+
+@media only screen and (max-width: 960px) {
+   .text { font-size: 0.8em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+@media only screen and (max-width: 1200px) {
+   .container { font-size: 0.5em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+#thing {
+    height: 15px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    background: #fff;
+    z-index: 10000;
+    left: 0px;
+    padding: 5px;
+    padding-bottom: 20px;
+    padding-left: 2.5em;
+    display: block;
+
+
+}
+
+.thingtext {
+    font-size: 24px;
+      margin-right: 40px;
+
+}
+
+
+/* FUCKING MENU */
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0px;
+
+
+
+  }
+
+  .dropdown-button {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: -1px;
+    cursor: context-menu;
+
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+   background-color:   #fff;
+    padding: 5px 7px;
+    z-index: 200000;
+    bottom: 100%;
+    font-size: 28px;
+    padding-left: 20px;
+    border: 3px solid #000;
+    width: 250px;
+    color: #000;
+
+
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:link, .dropdown a:active {
+  color: #000;
+
+}
+
+
+.dropdown-content a:hover .dropdown-content {
+    display: block;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: outside;
+
+}
+
+a:link, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+    font-family: arial, 'sans-serif';
+}
+
+a:hover {
+    text-decoration: underline;
+
+
+}
+
+.fuckingtransition {
+  font-family: arial, sans-serif;
+
+
+}
+
+.fuckingtransition a:link, .fuckingtransition a:active, .fuckingtransition a:visited {
+  text-decoration: none;
+    font-size: 48px;
+}
+
+.fuckingtransition a:hover {
+  text-decoration: underline;
+}
+</style>
+
+    </head>
+
+
+       <body>
+         
+<div id="thing"> 
+
+  <div class="dropdown">
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
+  
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+                    <li><a href="index.html">Index</a></li> 
+
+        <li style="list-style-type: disc;" title="You are here right now, silly!" ><a href="intro.html">Introduction</a></li> 
+        <li> <a href="chapter1.html">Chapter I </a> </li>
+        <li ><a href="chapter2.html">Chapter II</a></li>
+        <li ><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+
+    </ul>
+
+</div>   <!-- closing of thing-->
+</div>   <!-- closing of dropdown-->
+</div>   <!-- closing of dropdown-content-->
+
+
+
+<div id="wrapper">
+
+
+  <div id="side2"> 
+
+<div class="titulo">
+
+   <h1 style="border-bottom: 2px solid #000;">
+Introduction
+</h1>
+
+
+
+</div>
+
+
+    <div class="text">
+When I was about twelve years old, I was determined to be a journalist. I devoured books faster than my mum could buy new ones to keep me distracted, and the idea of having my own newspaper one day was one I entertained quite often. A lucky situation then arose: I got my first computer. 
+At the time, the possibilities of having your own personal space on the web were enhanced by a multitude of blog platforms like <i>BlogSpot</i> and <i>Wordpress</i>, usually free services with a selection of templates, offering a subdomain that you’d benefit from while still promoting the service that made it possible. This gave me an opportunity that before I had only come close to by making my handwritten booklets that I’d give to my parents and whoever was interested: I could have my own platform. And with a template I had achieved a level of credibility I had never got close to with my scribbled stapled A4’s.
+<br><br>
+Yet another significant realisation I had was while looking for more templates that would fit whatever design concerns I had at the time, and stumbled into an “about the webmaster page” of a blog I liked, most likely in the hopes of finding out where they got their template from. To my surprise, not only the author of this blog was only a few years older than me, but she had also managed to design her own page. Her header was some sort of digital collage of different pictures, some of them were of people and the others were of strawberries, because it was about a popular Portuguese TV show for young people called <i>“Strawberries With Sugar”</i>. 
+<br><br>
+In the Portuguese-speaking Web of the early 2000’s (the only one I can personally account for), it was very common for someone with a personal website to have a “tutorials” section on it, and it served not only to exchange knowledge but it also gave an isight on the user’s own process and methods as it often included tips on how to do what they had done. How to make your images blink? How to make a four-columns layout? If they did it before, the answer would be there somewhere.  It was profoundly groundbreaking for someone who previously assumed that only a group of experienced middle-aged men could have combined people and strawberries in such an effortless fashion.
+<br><br>
+My starting point for the writing of this thesis is thus the <u>changing paradigm of authorship</u> enabled by the wide availability of artistic production tools and information. With the goal of creating a body of work that is as technologically progressive as it is historically aware, I’ve not only researched on matters relating to the digital revolution, but past technological revolutions that have changed conventions behind authorship and creativity.
+<br><br>
+The origin of the idea behind creativity is exactly the topic of my first chapter. With the contextual background of Gutenberg’s printing press, it explores the origins of our idea of the artist, who was, after divinity, <u>the first entity given the ability to create</u>.
+<br><br>
+On the topic of accessibility and technology, the Industrial Revolution is then the backdrop of the second chapter, where I explore an important element of the creative practice: the process. Also connected to the idea and persona of the artist, I explore the <u>studio as the context of the creative process</u> and its potential to promote a bigger understanding of it. 
+<br><br>
+Accessibility, engagement, participatory cultures and ideas behind authorship are a common topic in both the Punk movement and the Web, particularly its net.art movement, a comparison that I investigate in the third chapter, where the digital revolution is <u>not only the technological framework but now also its main topic</u>.
+<br><br>
+While my interest on the topic is clearly relevant from my point of view as a graphic designer it starts by addressing issues that relate to visual art, as the endeavour of giving an appropriate contextual basis for graphic design relies also on the broader topics of visual studies and art history in order to address society’s relationship with a culture where the visual is progressively more dominant.
+
+
+
+
+<br><br>
+
+
+</div>
+<center>
+<div class="fuckingtransition"> <a href="chapter1.html">Chapter 1 →</a></div>
+</center>
+
+
+<br> <br>
+</div>
+
+ 
+
+
+
+
+
+</div>
+
+
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+   
+    </body>
+    
+</html>
