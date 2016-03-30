@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='img/favicon2.ico' />
+
+        <!-- The classical Cartesian distinction, head and body!
+            In the head comes all the metadata the page needs to function-->
+
+        <title>Everything is Made: Chapter II</title> 
+
+        <meta charset="utf-8"/> <!-- accents -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <!-- Stops mobile browsers from ‘zooming out’: this allows you to create specific layout for mobile -->
+
+        <!-- A short description of the page: -->
+        <meta name="description" content="This is my thesis sketch">
+                
+        <!-- This is the title used by Facebook/Twitter: they recommend to leave out the site name -->
+        <meta property="og:title" content="Example Thesis Document" />
+        <!-- This is the the preview image used by Facebook/Twitter.
+             Facebook currently prefers a 1200x630 image
+             Import: this has to be an absolute url including the domain name -->
+        <meta property="og:image" content="http://kabk.github.io/govt4-coding/preview_image.png" />
+        
+
+        <!-- This metadata encodes the author of the page. It is currently not used by Facebook, Twitter,
+             but the script generating our index does use it. -->
+        <meta property="dc:creator" content="Veloso, Yara"/>
+
+        <!-- When you first published the page, and when it was last modified -->
+        <meta property="dc:created" content="2015-12-05T00:00:00Z" />
+        <meta property="dc:modified" content="2015-12-05T00:00:00Z" />
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
+        
+        <!-- The JavaScript files we don’t link here but at the end of the file -->
+
+
+
+
+
+<style>
+
+body,html {
+    font-family: times, "times new roman", serif;
+    font-size: 26px;
+    letter-spacing: -1px;
+    background-color:   #fffffc;
+     margin: 0;
+    padding: 0;
+     height: 100%;
+    overflow-y: hidden; // hide vertical
+
+
+
+}
+
+/* MAIN DIVS */
+
+#wrapper {
+    position:absolute;
+padding: 20px 60px 0px 60px;
+
+}
+
+
+.text {
+    letter-spacing: 0px;
+      width: 95%;
+height:88vh;
+font-size: 26px;
+  }
+
+
+
+#thing {
+    height: 20px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    z-index: 10000;
+    left: 0px;
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-left: 2.5em;
+    display: block;
+
+
+}
+
+.thingtext {
+  font-family: arial;
+    font-size: 24px;
+      margin-right: 40px;
+      float: right;
+
+}
+
+
+/* TEXT FORMATTING */
+
+a:link, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+    font-family: arial, 'sans-serif';
+}
+
+a:hover {
+    text-decoration: underline;
+
+
+}
+
+
+.footnotes {
+  font-size: 12px;
+  float: right;
+  width: 35%;
+  padding: 20px;
+  font-family: arial;
+  color: gray;
+
+}
+
+sup, sup a:link, sup a:hover, sup a:active {
+  font-family: arial; display: inline; font-size: 14px; color: gray;}
+
+
+.quote {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;
+}
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  
+}
+
+h3 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 40px;
+   text-align: center;
+
+}
+
+h1 a:link, h1 a:active, h1 a:visited {
+color: red;
+text-decoration: none;
+font-family: times, 'times new roman', serif;
+
+}
+
+h1 a:hover {
+text-decoration: none;
+color: blue;
+
+}
+
+h1 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 3em;
+   text-align: center;
+}
+
+
+
+ul {
+    list-style-type: circle;
+    list-style-position: outside;
+
+}
+
+
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width:30px;
+    height: 100vh;
+    background-color: red;
+    color: #fff;
+}
+
+
+/* SELECTION */
+::selection {
+  background: #f9f9f9;
+ /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background:  #f9f9f9; /* Gecko Browsers */
+}
+
+/* IMAGES THAT ARE FUCKING ME UP */
+.img_caption {
+  padding: 5px;
+  font-size: 15px;
+}
+
+.img_caption a:hover {
+  display:none;
+}
+
+/* FUCKING MENU */
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0px;
+
+
+
+  }
+
+  .dropdown-button {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: -1px;
+    cursor: context-menu;
+
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+   background-color:   #fff;
+    padding: 5px 7px;
+    z-index: 200000;
+    bottom: 100%;
+    font-size: 28px;
+    padding-left: 20px;
+    border: 3px solid blue;
+    width: 250px;
+
+
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:link, .dropdown a:active {
+  color: #000;
+
+}
+
+
+.dropdown-content a:hover .dropdown-content {
+    display: block;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 115px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 5px ;
+    border: 3px solid blue;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 100000000;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* WANNABE RESPONSIVE DESIGN LOL */
+
+@media only screen and (max-width: 767px) {
+   .container { font-size: 0.5em;  }
+   .next, .prev { font-size: 0.3em; }
+   .next {right: 20px;}
+   .prev {left: 20px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+   .text { font-size: 0.7em; }
+ }
+
+
+@media only screen and (max-width: 960px) {
+   .text { font-size: 1em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+@media only screen and (max-width: 1200px) {
+   .container { font-size: 0.5em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+ol li{
+-webkit-column-break-inside:avoid;
+-moz-column-break-inside:avoid;
+-o-column-break-inside:avoid;
+-ms-column-break-inside:avoid;
+column-break-inside:avoid;
+}
+
+
+.next, .prev {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  bottom: 50%;
+  z-index: 1;
+}
+
+.next {
+  right: 23%;
+  font-size: 200%;
+}
+
+.prev {
+  left: 7%;
+  font-size: 200%;
+}
+
+
+.container {
+  height: 75%;
+ width: 50%;
+   min-width: 600px;
+  margin: 0 auto;
+  left: 15%;
+  top: 30px;
+  text-align: left;
+  position: fixed;
+  font-size: 70%;
+  padding: 30px;
+  border: 5px solid #000;
+  background-color: #fff;
+  overflow: scroll;
+
+}
+.container div {
+  width: 100%;
+  display: inline-block;
+  display: none;
+}
+.container img {
+  width: auto;
+  height: auto;
+}
+
+.fuckingtransition {
+  font-family: arial, sans-serif;
+
+
+}
+
+.fuckingtransition a:link, .fuckingtransition a:active, .fuckingtransition a:visited {
+  text-decoration: none;
+    font-size: 48px;
+}
+
+.fuckingtransition a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+    </head>
+
+
+       <body>
+         
+
+<div id="thing"> 
+
+  <div class="dropdown">
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
+  
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+                    <li><a href="index.html">Index</a></li> 
+
+        <li><a href="intro.html">Introduction</a></li> 
+        <li> <a href="chapter1.html">Chapter I </a> </li>
+        <li style="list-style-type: disc;" title="You are here right now, silly!" ><a href="chapter2.html">Chapter II</a></li>
+        <li><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+
+    </ul>
+
+</div>   <!-- closing of thing-->
+</div>   <!-- closing of dropdown-->
+</div>   <!-- closing of dropdown-content-->
+
+
+
+
+
+<div id="wrapper">
+<div id="content">
+<div class="text">
+ 
+<p style="text-align: center; font-family: arial;"> Chapter II:  <br> <br>
+
+Can the process be used to demystify the artist?
+
+</p>
+
+   <h1>
+<a href="chapter2.html">On the Industrial revolution, the studio and the creative process </a></h1>
+
+
+<BR>
+
+
+  <div class="next"> →  </div>
+  <div class="prev">←</div>
+
+  <div class="container"> 
+
+
+    <div style="display: inline-block;" class="text">
+
+    
+
+
+   Traditionally, an artist has been thought of as working in a studio. This is the place where artworks – conventionally mostly paintings or sculptures, “studio arts” – are created. Imagining an artist’s studio is perhaps imagining a rather romantic situation where a lonely painter stands in front of a canvas in a small room in an attic, covered in paint and surrounded by brushes. Or, instead, one of the majestic workshops of the Dutch masters, full of assistances and wealthy aristocrat clients. Or maybe a messy, chaotic, colourful place full of eccentric personalities like Andy Warhol’s Factory   
+
+
+   <a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(13)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+      Hoffmann, Jens, 2012, <u> The Studio (Documents of Contemporary Art) </u> , Whitechapel Art Gallery, London. MIT Press
+
+
+    </p>
+
+  </span>
+</a>
+
+
+. Even if this or any other clichés behind the idea of the studio are likely to represent reality, they are based on concepts endured not only in art history, but also in popular culture, and usually rely on the idea of the artist perpetuated at the time. 
+
+
+  <br><br>
+
+<center>
+
+  <img src="img/3.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 3</i> -  Gustave Courbet, <u>L`atelier du peintre, allégorie réelle déterminant une phase de sept années de ma vie artistique</u>, 1854-1855,  Musée d’Orsay, Paris. </p>
+
+
+<br><br>
+ <img src="img/4.png">
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 4</i> - Gerard Dou, <u>De schilder in zijn atelier</u>, 1647, Gemaelde Galerie Alte Meister, Dresden. </p>
+<br><br>
+
+  <img src="img/5.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 5</i> - Andy Warhol with ‘Flowers’ at The Factory. Actor Philip Fagan and artst Gerard Malanga are in the background. (1964) </p>
+
+</center>
+
+</div>     <div style="display: inline-block;" class="text">
+
+
+ 
+The actual relationship between artists and the studio has, however, been one subjected to social, cultural and technological advancements as much as art itself  <a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(14)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+     Honour, Hugh; Fleming, John; 2009, <u>A World History of Art </u>, Laurence King
+
+
+    </p>
+
+  </span>
+</a>
+
+
+
+
+. Before the Renaissance the concept of a studio was not as prevailing one due to the centralised infrastructure of the Church that dominated artistic production: artists worked within the spaces they were commissioned to work for, like monasteries and other religious establishments.  As artists started to develop more meaningful and long-lasting relationship with their commissioners – or patrons – they started to become dependant on this relationship rather than on specific locations. There was, however, a variety of contexts for the idea of the studio. The artist’s work was carried out in the bottega – the workshop or workroom – while the studiolo was a room for study and contemplation and would be in a separate space, although usually in the same building. This division already indicates a split in the perception of art production: the physical, practical work and the analysis and reflection – they were seen as different processes. This changed in the Romantic period, when the studio became both a space for practical work and introspection, a combination inherent to the model of the artist at the time and his perceived genius. 
+
+<br><br>
+
+<center>
+  
+ <img src="img/6.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 6</i> - Wood engraving by Flemish artist Johannes Stradanus (1523-1605), depicting the “Rennaisance workshop” or studio, with the master (middle) and his apprentices.  </p>
+
+</center>
+ </div>     <div style="display: inline-block;" class="text">
+
+
+The beginning of industrial production had huge consequences for artists. If before they had to produce their own paints in laborious mixing processes, now paint was widely available in ready to use aluminium tubes 
+
+
+   <a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(15)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;" title="http://ncartmuseum.org/pdf/revolution-supplement.pdf">
+
+
+      Hunt, Perry, <u>Revolution in Paint</u>, 2006, North Carolina Museum of Art
+
+
+    </p>
+
+  </span>
+</a>
+
+
+
+
+. Along with paint, lightweight portable easels and brushes could be produced in large quantities and easily purchased at a store, making art an accessible commodity. This enabled an entire new way of painting known as en plain air – in open air – and artists across Europe could pack their materials and paint nature. Painting became an activity of leisure, an autonomous pursuit, without necessarily having to depend on the artist’s relationship with a patron: l’art pour l’art, literally “art for art”. 
+<br> <br>
+   <center>
+<img src="img/8.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 8</i> - Edouard Manet , <u>Monet in his Studio Boat</u>, 1874, Neue Pinakothek, Munich, Germany.  </p>
+</center>
+   <br> 
+
+The growing impact of industrial technology would mean more dramatic changes to the role of art in society and consequently, the role and practice of those producing it. In “The Work of Art in the Age of Mechanical Reproduction”, Walter Benjamin addresses how the reproduction possibilities enabled by the Industrial Revolution “brush aside a number of outmoded concepts, such as creativity and genius, eternal value and mystery” by destroying the uniqueness and authenticity – “the aura” – of the work of art. The value of the work no longer stems from its ritualistic value and tradition. 
+
+</div>     <div style="display: inline-block;" class="text">
+   
+The classical notions of art were challenged as well as the established ways in which it was experienced, presented and distributed. Art was not only subject to these changes but a means address them, as it now had the autonomy, means and audience to be self-referential 
+
+
+   <a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(16)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+      Davidts, Wouter, and Kimberly Paice. <u>The Fall of the Studio: Artists at Work</u>. Valiz, Amsterdam: Antennae, 2009. 
+
+
+
+    </p>
+
+  </span>
+</a>
+
+
+. The elements, nature and adequacy of the artistic practice started therefore to be acknowledged not only by art historians, critics and the public, but by artists themselves.  
+
+
+   <br> <br>
+<p style="letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;">“Throughout the modern era, the idea that artists can do things that ordinary people cannot has been systematically refuted by artists themselves. Artists have not been knocked off their pedestals, they have stepped down voluntarily. […] the classic reaction to contemporary art is “Anyone could do that…” This process of deskilling in visual art must be regarded as irreversible, since it is a consequence of the social disconnection of artisthood from mainstream forms of production and productivity” </p>
+    <p style="font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  ">Winkel, Camiel Van. <u>The Myth of Artisthood</u>. Amsterdam: Mondriaan Fund, 2013. </p>
+
+<br> <br>
+   
+Modern artists defied the standards of technique and craftsmanship that consisted the criteria for their own profession which at large challenged the genres, traditions and its archetypes of art. The model of the artist as a divine and solitary being that started in the Renaissance and thrived in the Romantic period was rejected by the modern artist, who preferred to be identified with the worker rather than the aristocrat   
+
+<a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(17)</sup>.
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+      Winkel, Camiel Van. 2013, <u>The Myth of Artisthood</u>. Amsterdam: Mondriaan Fund.
+
+
+    </p>
+
+  </span>
+</a>
+
+<br> <br>
+  
+
+Another element of the artistic practice that was a target for critique was the designated site of its production: the studio. By the last stages of the modernist period, in 1960’s, it had lost its conventional prominence and mythical stature as the “imaginations chamber”. This model of the studio, reinforced during the Romantic period was now one that represented a type of artistic practice, material production and creative identity that was outdated and that artists wished to overcome or even avoid altogether 
+
+<a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(18)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+Hoffmann, Jens, 2012, <u>The Studio (Documents of Contemporary Art)</u>, Whitechapel Art Gallery, MIT Press, London.
+
+
+    </p>
+
+  </span>
+</a>
+
+
+.
+
+</div>     <div style="display: inline-block;" class="text">
+
+   
+
+The questioning of the meaning and role of the studio began to be a recurring subject as a form of institutional critique
+
+
+<a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(19)</sup>.
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;">
+
+
+Davidts, Wouter, and Kimberly Paice. <u>The Fall of the Studio: Artists at Work</u>. Valiz, Amsterdam: Antennae, 2009. 
+
+
+
+    </p>
+
+  </span>
+</a>
+
+
+
+In his essay “The Function of the Studio”, published in 1971, French artist Daniel Buren claims that  “[…] the main point of the work is lost somewhere between its place of production and place of consumption and forced me to consider the problem and the significance of the work’s place. What I later came to realise was that it was the reality of the work, its “truth,” its relationship to its creator and place of creation, that was irretrievably lost in this transfer.”. The preoccupation with “truthfulness” in the context of the art apparatus implies a concern with the reception of the work. He addresses the studio as a place where “[…]we generally find finished work, work in progress, abandoned work, sketches – a collection of visible evidence viewed simultaneously that allows an understanding of process; it is this aspect of the work that is extinguished by the museum’s desire to “install.”. 
+
+<br> <br>
+
+Whether Buren’s concern with displaying the work in its original site of production is related to a responsibility of increasing the public awareness of art or to his desire to safeguard his position at the moment of creation , it poses an important question: Could the studio be used as a framework for uncovering the creative process and the mechanisms of the art practice and system?
+
+</div>     
+
+<div style="display: inline-block;" class="text">
+<center>
+<img src="img/9.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 9</i> - Raoul Dufy in his studio, 1945, photograp by Cecil Beaton. </p>
+<br> <br>
+
+<img src="img/10.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 10</i> -Henri Matisse painting in his studio, 1941 </p>
+<br> <br>
+
+ <img src="img/11.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 11</i> -Robert Rauschenberg in his studio, 1965, photograph by Alexander Liberman </p>
+<br> <br>
+    
+
+ <img src="img/12.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 12</i> - Braque in his studio, 1966. </p>
+
+<br> <br>
+
+<img src="img/13.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 13</i> - Daniel Buren, <u>Photo-Souvenir: Le Bureau de Daniel Buren</u>, Paris. 1987. </p>
+
+   <br> <br>
+
+<img src="img/14.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 14</i> - J.C.J. van der Heyden, <u>Atelier met gebogen horizon</u>, 1992, Centraal Museum, Amsterdam. </p>
+
+  <br> <br>
+
+<img src="img/15.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 15</i> - Martin Kippenberger, <u>Spiderman Atelier</u>, 1996, Galerie Gisela Capitain, Keulen, The Herbert Foundation.</p>
+<br> <br>
+
+<img src="img/16.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 16</i> - Jason Rhoades, <u>The Creation Myth</u>, 1998.</p>
+ 
+<br> <br>
+<img src="img/17.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;"><i>Fig 17</i> - Bruce Nauman, <u>Mapping the Studio (video still)</u>, 2001, part of the collection of Tate Modern, London, The Pompidou Centre, Paris and Kunstmuseum, Basel.</p>   
+
+</center>
+    </div>
+
+
+      <div style="display: inline-block;" class="text">
+
+Making the studio a part of a work of art has the potential to value the creative process as opposed to focusing solely on final pieces. More than being solely about seeing the work of art in its original place of production it is about acknowledging it as a part of a context of research and the process that it entails. Ideally, it gives emphasis to the actual means and context in which it is made, rather than on the way it is presented and the perceptions of it constructed, institutionalised value. Uncovering the production of art underlines artistic practice as more than a collection of objects but a result of human activity and processes 
+
+
+<a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(19)</sup>
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;" title="Http://writingaboutart.org/pages/biography.html">
+
+
+Munsterberg, Marjorie, 2009, <u>Writing about Art - The Biography</u>, Writing About Art
+
+
+
+
+    </p>
+
+  </span>
+</a>
+
+
+
+
+. 
+   
+   <br> <br>
+
+
+
+
+<p style="letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;">“[The focus on] The Studio, in some ways, replaces what was considered “artistic genius” between the 16th and 19th centuries, or what in late modernism was called a “star”. It stands for the legitimising authenticity and the guarantee that the works of art made by an artist, or is assistants, will maintain their symbolic and economic value because they emerge from an inexhaustible source of creativity.” </p>
+   <p style="font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  ">Philip Unsprung,  <u>Narcissistic Studio: Olafur Eliasson </u> in Davidts, Wouter, and Kimberly Paice, <u>The Fall of the Studio: Artists at Work </u>. Valiz, Amsterdam: Antennae, 2009. </p>
+    </div>
+
+
+      <div style="display: inline-block;" class="text">
+
+        <center>
+<img src="img/18.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;">Fig 18 - Olafur Eliasson’s studio, 2015, found on the artist’s website.</p>
+<br> <br>
+    
+
+<img src="img/19.png"> </img>
+<p style="font-size: 15px;font-family: arial, sans-serif;">Fig 19 - Oscar Murrilo, 2013,<u> if I was to draw a line, this journey started approximately 400km north of the equator</u>, South London Gallery.</p>
+
+<br> <br>
+
+
+<img src="img/20.png"> </img>
+<p style="font-size: 15px; font-family: arial, sans-serif;">Fig 20 - Oscar Murrilo, 2013, <u>if I was to draw a line, this journey started approximately 400km north of the equator</u>, South London Gallery.</p>
+
+</center>
+
+Every attempt to demystify art has the potential to further underline the myth, and, at the same time create new myths for future generations to reject <a style="display: inline=block; text-decoration: none;" class="tooltip"><sup>(21)</sup>.
+  <span class="tooltiptext">
+
+    <p style="font-size: 15px;font-family: arial, sans-serif;" title="Http://writingaboutart.org/pages/biography.html">
+
+
+Winkel, Camiel Van. 2013, <u>The Myth of Artisthood </u>. Amsterdam: Mondriaan Fund.
+
+
+
+
+    </p>
+
+  </span>
+</a>
+
+
+
+. A counter-myth can become a myth in itself. Just like the aforementioned attempt of modern artists to “jump off the pedestal” have not entirely fulfilled its promise (didn’t the lack of conventions in modern art gain its own “revolutionary” value, that overcame the ritualistic and traditional value it had before?), the process of art and “the studio” has become an artistic product, cancelling out its value as the framework of the work by becoming the work in itself, and by doing that, mystifying the creative process.
+
+<br> <br>
+
+
+<center>
+<p classs="fuckingtransition"> <a href="chapter3.html" style="font-size: 48px;">Chapter 3 →</a></p>
+</center>
+
+    </div> 
+
+
+
+</div>
+
+
+
+
+
+</div>   <!-- closing of text-->
+</div>   <!-- closing of content-->
+</div>   <!-- closing of wrapper-->
+
+   
+    </body>
+
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">var currentIndex = 0,
+  items = $('.container div'),
+  itemAmt = items.length;
+
+function cycleItems() {
+  var item = $('.container div').eq(currentIndex);
+  items.hide();
+  item.css('display','inline-block');
+}
+
+var autoSlide = setInterval(function() {
+  currentIndex += 0;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+}, 3000);
+
+$('.next').click(function() {
+  clearInterval(autoSlide);
+  currentIndex += 1;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+});
+
+$('.prev').click(function() {
+  clearInterval(autoSlide);
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = itemAmt - 1;
+  }
+  cycleItems();
+});</script>
+    
+</html>

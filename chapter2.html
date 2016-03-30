@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='img/favicon2.ico' />
+
+        <!-- The classical Cartesian distinction, head and body!
+            In the head comes all the metadata the page needs to function-->
+
+        <title>Chapter 2</title> 
+
+        <meta charset="utf-8"/> <!-- accents -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <!-- Stops mobile browsers from ‘zooming out’: this allows you to create specific layout for mobile -->
+
+        <!-- A short description of the page: -->
+        <meta name="description" content="This is my thesis sketch">
+                
+        <!-- This is the title used by Facebook/Twitter: they recommend to leave out the site name -->
+        <meta property="og:title" content="Example Thesis Document" />
+        <!-- This is the the preview image used by Facebook/Twitter.
+             Facebook currently prefers a 1200x630 image
+             Import: this has to be an absolute url including the domain name -->
+        <meta property="og:image" content="http://kabk.github.io/govt4-coding/preview_image.png" />
+        
+
+        <!-- This metadata encodes the author of the page. It is currently not used by Facebook, Twitter,
+             but the script generating our index does use it. -->
+        <meta property="dc:creator" content="Veloso, Yara"/>
+
+        <!-- When you first published the page, and when it was last modified -->
+        <meta property="dc:created" content="2015-12-05T00:00:00Z" />
+        <meta property="dc:modified" content="2015-12-05T00:00:00Z" />
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
+        
+        <!-- The JavaScript files we don’t link here but at the end of the file -->
+
+
+
+
+
+<style>
+
+body,html {
+    font-family: times, "times new roman", serif;
+    font-size: 26px;
+    letter-spacing: -1px;
+    background-color:   #fffffc;
+     margin: 0;
+    padding: 0;
+     height: 100%;
+    overflow-y: hidden; // hide vertical
+
+
+
+}
+
+/* MAIN DIVS */
+
+#wrapper {
+    position:absolute;
+padding: 20px 60px 0px 60px;
+
+}
+
+
+.text {
+    letter-spacing: 0px;
+      width: 95%;
+height:88vh;
+  }
+
+
+
+#thing {
+    height: 20px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    z-index: 10000;
+    left: 0px;
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-left: 2.5em;
+    display: block;
+
+
+}
+
+.thingtext {
+  font-family: arial;
+    font-size: 24px;
+      margin-right: 40px;
+      float: right;
+
+}
+
+
+/* TEXT FORMATTING */
+
+a:link, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+    font-family: arial, 'sans-serif';
+}
+
+a:hover {
+    text-decoration: underline;
+
+
+}
+
+.footnotes {
+  font-size: 12px;
+  float: right;
+  width: 35%;
+  padding: 20px;
+  font-family: arial;
+  color: gray;
+
+}
+
+sup, sup a:link, sup a:hover, sup a:active {
+  font-family: arial; display: inline; font-size: 14px; color: gray;}
+
+
+.quote {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;
+}
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  
+}
+
+h3 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 40px;
+   text-align: center;
+
+}
+
+
+h1 a:link, h1 a:active, h1 a:visited {
+color: red;
+text-decoration: none;
+font-family: times, 'times new roman', serif;
+
+}
+
+h1 a:hover {
+text-decoration: none;
+color: blue;
+
+}
+
+h1 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 3em;
+   text-align: center;
+}
+
+
+
+ul {
+    list-style-type: circle;
+    list-style-position: outside;
+
+}
+
+
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width:30px;
+    height: 100vh;
+    background-color: red;
+    color: #fff;
+}
+
+
+/* SELECTION */
+::selection {
+  background: #f9f9f9;
+ /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background:  #f9f9f9; /* Gecko Browsers */
+}
+
+/* IMAGES THAT ARE FUCKING ME UP */
+.img_caption {
+  padding: 5px;
+  font-size: 15px;
+}
+
+.img_caption a:hover {
+  display:none;
+}
+
+/* FUCKING MENU */
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0px;
+
+
+
+  }
+
+  .dropdown-button {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: -1px;
+    cursor: context-menu;
+
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+   background-color:   #fffffc;
+    padding: 5px 7px;
+    z-index: 200000;
+    bottom: 100%;
+    font-size: 28px;
+    padding-left: 20px;
+    border: 3px solid #000;
+    width: 250px;
+
+
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* WANNABE RESPONSIVE DESIGN LOL */
+
+@media only screen and (max-width: 767px) {
+   .container { font-size: 0.5em;  }
+   .next, .prev { font-size: 1em; }
+   .next {right: 20px;}
+   .prev {left: 20px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+   .text { font-size: 0.7em; }
+ }
+
+
+@media only screen and (max-width: 960px) {
+   .text { font-size: 0.8em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+@media only screen and (max-width: 1200px) {
+   .container { font-size: 0.5em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+ol li{
+-webkit-column-break-inside:avoid;
+-moz-column-break-inside:avoid;
+-o-column-break-inside:avoid;
+-ms-column-break-inside:avoid;
+column-break-inside:avoid;
+}
+
+
+.next, .prev {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  bottom: 50%;
+  z-index: 1;
+}
+
+.next {
+  right: 100px;
+  font-size: 150%;
+}
+
+.prev {
+  left: 100px;
+  font-size: 50px;
+}
+
+
+.container {
+  height: 75%;
+ width: 70%;
+   min-width: 600px;
+  margin: 0 auto;
+  left: 13%;
+  top: 30px;
+  text-align: left;
+  position: fixed;
+  font-size: 70%;
+  padding: 30px;
+  border: 5px solid #000;
+  background-color: #fffffa;
+  overflow: scroll;
+
+}
+.container div {
+  width: 100%;
+  display: inline-block;
+  display: none;
+}
+.container img {
+  width: auto;
+  height: auto;
+}
+
+</style>
+
+    </head>
+
+
+       <body>
+         
+
+<div id="thing"> 
+
+  <div class="dropdown">
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
+  
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+        <li><a href="intro.html">Introduction</a></li> 
+        <li> <a href="chapter1.html">Chapter I </a> </li>
+        <li style="list-style-type: disc;" title="You are here right now, silly!" ><a href="chapter2.html">Chapter II</a></li>
+        <li><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+
+    </ul>
+
+</div>   <!-- closing of thing-->
+</div>   <!-- closing of dropdown-->
+</div>   <!-- closing of dropdown-content-->
+
+
+
+
+
+<div id="wrapper">
+<div id="content">
+<div class="text">
+ 
+<p style="text-align: center; font-family: arial;"> Chapter II:  <br> <br>
+
+Can the process be used to demystify the artist?
+
+</p>
+
+   <h1>
+<a href="chapter2text.html">On the Industrial revolution, the studio and the creative process </a></h1>
+
+
+<BR>
+
+
+
+
+
+
+
+
+</div>   <!-- closing of text-->
+</div>   <!-- closing of content-->
+</div>   <!-- closing of wrapper-->
+
+   
+    </body>
+
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">var currentIndex = 0,
+  items = $('.container div'),
+  itemAmt = items.length;
+
+function cycleItems() {
+  var item = $('.container div').eq(currentIndex);
+  items.hide();
+  item.css('display','inline-block');
+}
+
+var autoSlide = setInterval(function() {
+  currentIndex += 0;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+}, 3000);
+
+$('.next').click(function() {
+  clearInterval(autoSlide);
+  currentIndex += 1;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+});
+
+$('.prev').click(function() {
+  clearInterval(autoSlide);
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = itemAmt - 1;
+  }
+  cycleItems();
+});</script>
+    
+</html>

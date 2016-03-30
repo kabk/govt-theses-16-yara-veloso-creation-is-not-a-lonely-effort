@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='img/favicon2.ico' />
+
+        <!-- The classical Cartesian distinction, head and body!
+            In the head comes all the metadata the page needs to function-->
+
+        <title>Everything is Made: Chapter I</title> 
+
+        <meta charset="utf-8"/> <!-- accents -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <!-- Stops mobile browsers from ‘zooming out’: this allows you to create specific layout for mobile -->
+
+        <!-- A short description of the page: -->
+        <meta name="description" content="This is my thesis sketch">
+                
+        <!-- This is the title used by Facebook/Twitter: they recommend to leave out the site name -->
+        <meta property="og:title" content="Example Thesis Document" />
+        <!-- This is the the preview image used by Facebook/Twitter.
+             Facebook currently prefers a 1200x630 image
+             Import: this has to be an absolute url including the domain name -->
+        <meta property="og:image" content="http://kabk.github.io/govt4-coding/preview_image.png" />
+        
+
+        <!-- This metadata encodes the author of the page. It is currently not used by Facebook, Twitter,
+             but the script generating our index does use it. -->
+        <meta property="dc:creator" content="Veloso, Yara"/>
+
+        <!-- When you first published the page, and when it was last modified -->
+        <meta property="dc:created" content="2015-12-05T00:00:00Z" />
+        <meta property="dc:modified" content="2015-12-05T00:00:00Z" />
+        
+        <!-- Link stylesheets!-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" /> <!-- This normalize.css file takes care of some inconsistencies between browsers -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /><!-- Here I put the rest of my styles-->
+        
+        <!-- The JavaScript files we don’t link here but at the end of the file -->
+
+
+
+<script>
+function gridWidth() {
+  return window.innerWidth - 21;
+}
+
+var snap = function() {
+    // what is the width of half a column
+    var half = gridWidth() / 2;
+    // how many columns have we scrolled by completely
+    var n = parseInt( $(window).scrollLeft() / gridWidth() );
+    // how many pixels into the next column
+    var rest = $(window).scrollLeft() % gridWidth();
+    if (rest > half) {
+        $(window).scrollLeft( (n + 1) *  gridWidth() )
+    } else {
+       $(window).scrollLeft( n *  gridWidth() ) 
+    }
+};
+
+
+function myFunction() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    var width = gridWidth();
+    body.scrollLeft += width;
+    body.scrollTop += 0;
+    html.scrollLeft += width;
+    html.scrollTop += 0;
+}
+
+</script>
+
+
+<script>
+function myFunction2() {
+    var body = document.body; // For Chrome, Safari and Opera
+    var html = document.documentElement; // Firefox and IE places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these two browsers
+    var width = gridWidth();
+    body.scrollLeft += -width;
+    body.scrollTop += 0;
+    html.scrollLeft += -width;
+    html.scrollTop += 0;
+}
+
+</script>
+
+
+
+<style>
+
+body,html {
+    font-family: times, "times new roman", serif;
+    font-size: 26px;
+    letter-spacing: -1px;
+    background-color:   #fffffc;
+     margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: hidden; // hide vertical
+
+
+}
+
+#wrapper {
+    position:absolute;
+padding: 20px 60px 0px 60px;
+
+}
+
+::selection {
+  background: #f9f9f9;
+ /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background:  #f9f9f9; /* Gecko Browsers */
+}
+
+.img_caption {
+  padding: 5px;
+  font-size: 15px;
+  float: left;
+  margin-right: 10px;
+}
+
+.footnotes {
+  font-size: 12px;
+  float: right;
+  width: 35%;
+  padding: 20px;
+  font-family: arial;
+  color: gray;
+
+}
+
+
+.text {
+       -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+     -webkit-column-gap: 100px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 100px; /* Firefox */
+    column-gap: 100px;
+  column-fill: auto;
+
+ 
+       -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    -moz-column-rule-style: solid; /* Firefox */
+    column-rule-style: solid;
+    -webkit-column-rule-width: 2px; /* Chrome, Safari, Opera */
+   -moz-column-rule-width: 1px; /* Firefox */
+  column-rule-width: 1px; 
+
+
+    letter-spacing: 0px;
+      width: 100%;
+height:88vh;
+  }
+
+.linhacaixa {
+  border-left: 2px solid #000;
+  height: 650px;
+  position: fixed;
+  margin: 0 auto;
+    left: 0;
+    right: 0;
+    left: 50%;
+    top: 5%;
+}
+
+.linha2 {
+  display:none;
+}
+
+
+
+
+/* Text formatting*/
+
+a:link, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+    font-family: arial, 'sans-serif';
+}
+
+a:hover {
+    text-decoration: underline;
+
+
+}
+
+
+
+.pagenumber {
+    -webkit-column-span: all; /* Chrome, Safari, Opera */
+    column-span: all;
+    bottom: 5px;
+}
+
+
+
+.quote {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   padding-left: 15%;
+font-style: oblique;
+}
+
+h3 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 40px;
+   text-align: center;
+
+}
+
+h1 {
+    letter-spacing: 0px;
+   margin-top: 0px;
+   font-size: 3em;
+   text-align: center;
+}
+
+
+.caption {
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    letter-spacing: 1px;
+padding-top: 10px;  
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: outside;
+
+}
+
+
+
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width:30px;
+    height: 100vh;
+    background-color: red;
+    color: #fff;
+}
+
+#boxnext {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+   margin: 0 auto;
+    right: 0px;
+     top: 0px;
+}
+
+#boxprev {
+  position: fixed;
+  cursor: pointer;
+  z-index: 1;
+   margin: 0 auto;
+    top: 0px;
+   left: 0px;
+}
+
+
+
+
+
+#boxcheating {
+  position: absolute;
+  z-index: 1000000;
+    left: 0px;
+     top: 0px;
+     width: 60px;
+     bottom: 0px;
+     margin: 0px;
+     height: 100vh;
+
+     background-color: #fffffc;
+}
+
+.next, .prev {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rotate {
+
+/* Safari */
+-webkit-transform: rotate(90deg);
+
+/* Firefox */
+-moz-transform: rotate(90deg);
+
+/* IE */
+-ms-transform: rotate(90deg);
+
+/* Opera */
+-o-transform: rotate(90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+.rotate2 {
+
+/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+
+#thing {
+    height: 20px;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    z-index: 10000;
+    left: 0px;
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-left: 2.5em;
+    display: block;
+
+
+}
+
+.thingtext {
+  font-family: arial;
+    font-size: 24px;
+      margin-right: 40px;
+      float: right;
+
+}
+
+
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing: 0px;
+
+
+
+  }
+
+  .dropdown-button {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    letter-spacing: -1px;
+    cursor: context-menu;
+
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+   background-color:   #fffffc;
+    padding: 5px 7px;
+    z-index: 200000;
+    bottom: 100%;
+    font-size: 28px;
+    padding-left: 20px;
+    border: 3px solid #000;
+    width: 250px;
+
+
+  
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+   .container { font-size: 0.5em;  }
+   .next, .prev { font-size: 1em; }
+   .next {right: 20px;}
+   .prev {left: 20px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+   .text { font-size: 0.7em; }
+ }
+
+
+@media only screen and (max-width: 960px) {
+   .text { font-size: 0.8em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+
+@media only screen and (max-width: 1200px) {
+   .container { font-size: 0.5em; }
+   .next, .prev { font-size: 1em; }
+    .next {right: 20px;}
+   .prev {left: 20px;}
+ }
+
+ol li{
+-webkit-column-break-inside:avoid;
+-moz-column-break-inside:avoid;
+-o-column-break-inside:avoid;
+-ms-column-break-inside:avoid;
+column-break-inside:avoid;
+}
+
+sup, sup a:link, sup a:hover, sup a:active {
+  font-family: arial; display: inline; font-size: 14px; color: gray;}
+
+  .fuckingtransition {
+  font-family: arial, sans-serif;
+
+
+}
+
+.fuckingtransition a:link, .fuckingtransition a:active, .fuckingtransition a:visited {
+  text-decoration: none;
+    font-size: 48px;
+}
+
+.fuckingtransition a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+    </head>
+
+
+       <body>
+         
+
+<div id="thing"> 
+
+  <div class="dropdown">
+  <span class="dropdown-button"> <u>Everything is Made </u></span>
+  
+   <div class="dropdown-content">
+<br>
+    <h3>Table of Contents</h3>
+    <ul>
+              <li><a href="index.html">Index</a></li> 
+        <li><a href="intro.html">Introduction</a></li> 
+        <li style="list-style-type: disc;" title="You are here right now, silly!"> <a href="chapter1.html">Chapter I </a> </li>
+        <li><a href="chapter2.html">Chapter II</a></li>
+        <li><a href="chapter3.html">Chapter III</a></li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+
+    </ul>
+
+  </div>
+
+ 
+</div>
+
+</div>
+
+
+<!--
+  <span class="buttoningeneral"> <a href="#">Intro </a></span>
+
+  <span class="buttoningeneral"> <a href="#">I </a></span>
+  <span class="buttoningeneral"> <a href="#">II </a> </span>
+  <span class="buttoningeneral"> <a href="#">III </a> </span>
+  <span class="buttoningeneral"> <a href="#">IV </a> </span>
+    <span class="buttoningeneral"> <a href="#">Conclusion </a></span>
+
+
+-->
+
+
+
+
+  <div class="thingtext"> </div>
+
+
+
+</div> 
+
+
+
+<div id="wrapper">
+
+
+
+<div id="boxnext"><button class="next" onclick="myFunction()"> <div class="
+  rotate"> Next </div> </button></div>
+<div id="boxprev"><button class="prev" onclick="myFunction2()"> <div class="
+  rotate2"> Previous </div> </button></div>
+
+
+
+<div id="content">
+ 
+ <!--
+<div class="linha"> </div> -->
+
+<div class="text">
+ 
+<p style="text-align: center; font-family: arial;"> Chapter I: </p>
+
+   <h1>
+    The printing press, art history and 
+  the myth of the artist
+<div id="boxcheating">    <br></div>
+
+<BR><BR><BR><BR>
+
+       </h1>
+
+Whilst the production of art can be dated back to the early beginnings of civilisation, art history could be said to have started much later than that. At least 35,000 years after the earliest known cave paintings were made, in 1550 <sup>(1)</sup>, Giorgio Vasari published in Italy the book that became known as the first extensive study of European Art: <i>Lives of the Artists</i>. Based on interviews, correspondence and field trips, the book explores the lives of a generation of artists from the Quattrocento and is considered one of the most important books about art ever written and the most essential guide to the Italian Renaissance, a term he coined himself. It’s a monumental encyclopaedia of sculptors, architects and painters. The invention of the printing press by Johannes Gutenberg a century before, in 1440, allowed <i>Lives</i> to be a bestseller in a time marked by the rapid growth of learning made possible by the availability of large numbers of inexpensive books. Before the invention of metal movable type, all printing was done manually in laborious processes and therefore largely unattainable for anyone who didn’t have the means to acquire them
+ <div class="footnotes" style="float: left;"> 
+    1. Wilford, John Noble , <a href="http://www.nytimes.com/2014/10/09/science/ancient-indonesian-find-may-rival-oldest-known-cave-art.html?_r=0"><u>Cave Paintings in Indonesia May Be Among the Oldest Known</u></a>, 2014 <br><br>
+
+2. Eisenstein, Elizabeth L., 1979, <u>The Printing Press as an Agent of Change: Communications and Cultural Transformations in Early Modern Europe</u>. Cambridge: Cambridge University Press.
+ </div>
+
+
+  – most of the population. This revolution introduced the era of mass communication by bringing books out of the church and into the universities, making knowledge available and bridging the medieval world with modern history <sup>(2)</sup>. <BR><BR>
+
+
+
+
+
+Gutenberg’s relevance to this topic of <i>Lives</i> could perhaps be extended to more than just its publishing. The fact that he is acknowledged by his invention is something particular to its time. People who created things were not usually recognised until this period, for reasons that are a subject of debate among historians<sup>(3)</sup>. The rise of science and the rediscovery of ancient philosophy are cited among them as well as the lost of church authority in the late middle ages and the following Reformation. Before that, creation was reserved for divinity and those with divine 
+
+
+<div class="img_caption" style="width:220px">
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Printer_in_1568-ce.png/220px-Printer_in_1568-ce.png"> </img>
+      Early wooden printing press, depicted in 1568
+    </div>
+
+
+
+    inspiration and the fact that human beings could make things was not something anyone would give much thought beforehand. Apart from a few exceptions like Greek philosophers, engineers and a few Chinese artists, our knowledge of who made what started around the thirteenth century and increased during the European Renaissance.  Although authorship started to be a more prevailing concept then – the first patents were issued in Italy in the fifteenth century <sup>(4)</sup> – and finally also linked to humans, it still had a mystical connotation as these humans were seen as great: Michelangelo, Rafael, Leonardo and all the so-called genius masters. <BR><BR>
+
+
+
+
+
+
+<div class="footnotes"> 
+   3. Kevin Ashton, 2015, <u>How to Fly a Horse: The Secret History of Creation, Invention, and Discovery</u>.
+<br><br>
+
+4. Frumkin, M.  1945, <u>The Origin of Patents, Journal of the Patent Office Society</u>, Vol. XXVII.
+
+ </div>
+
+
+
+
+Vasari’s biographical approach used in <i>Lives</i> is first applied to tell his own story, in the beginning of the book. Coming from a family of tradesmen, his father encouraged Giorgio’s talent for drawing and at the age of twelve he was put to study with Michelangelo in Florence. Even though it never truly happened as Michelangelo was sent to Rome almost immediately after that arrangement, the first encounter between older and already established Michelangelo and the young Vasari proved to be extremely important. Vasari came to worship him as an artist and man and the arrangement and structure of Lives, published a quarter of a century after they met, seems to depend completely on the climax provided by the life of Michelangelo. 
+<BR><BR>
+
+
+The personal aspect of the book does not, however, end with the autobiography. In its entirety, <i>Lives</i> is rich in personal comments and subjective knowledge. Vasari’s obsession with art and the artists he writes about ended up being his greatest contribution to the art world, despite his efforts to strive as an artist himself <sup>(5)</sup>.
+
+<div class="footnotes" style="float: left;"> 
+   5.Maclehose, Louisa S. Brown; Baldwin, Gerard, 1907, <u>Vasari on technique</u>, J. M. Dent & co., London
+
+
+ </div>
+
+   His own artistic practice was belittled by the success and status of his book, and in fact, the latter is likely far more personal than his paintings and architectural works as in it emerge his fascination, humour, wittiness and calculating nature. 
+<BR><BR>
+
+
+
+
+
+The importance of authorship is also clear in the format of the book itself: choosing the structure of a biography, rather than a history of events, draws attention to the maker as an essential part of understanding art and works of art. <i>Lives</i> created a model of interpretation of the arts that was used as a model in the centuries that followed it and continue to influence the field today <sup>(6)</sup>. 
+<div class="footnotes"> 
+6. Payne, Aline  Vasari, 2001,  <u>Vasari, Architecture and the Origins of Historicizing Art</u>, Res: Anthropology and Aesthetics, Harvard University Press, Francesco Pellizzi (ed.) <br> <br>
+7. D’Alleva, Anne. <u>Methods & Theories of Art History</u>. London: Laurence King, 2012. 
+
+ </div>
+
+
+
+
+The ways in which he acknowledges each artist separately but still refers to their characteristics and working methods with the same terms and suggests their similarities shows a notion of classification, a creation of a framework of values that is in the basis of art history <sup>(7)</sup>. Lives represents a turning point not only in its field but in the perception of art as width it, Vasari made the connection between artist and genius.
+
+<BR><BR>
+
+
+
+
+
+
+This is particularly evident in the chapters dedicated to the life and work of Michelangelo. His section in the book starts with the statement that he has been sent to earth by God, possessing an university ability in every art and every profession, in order to allow us to achieve supreme knowledge and save us from the presumptuous self-sufficiency of men. There’s a mythical aspect to his very existence on this planet and the claim of an universal truth that emerges from it. The important aspect is perhaps that the underlying argument behind every emphasis on Michelangelo’s qualities is that he is able to create because of a greater power, a power that has been granted to him by God. <BR><BR>
+
+
+
+Artistic ability is presented as being the foremost of human qualities, as it not only makes Michelangelo’s work the pinnacle of all artistic achievement, but it also puts him at the heart of humanity and civilisation. The idea that art would be given such relevance in the context of all human pursuits relies on the social and cultural importance that is given to it<sup>(8)</sup>, 
+
+<div class="footnotes" style="float: left;"> 
+8. Winkel, Camiel Van. 2013, <u>The Myth of Artisthood</u>. Amsterdam: Mondriaan Fund.
+
+ </div>
+
+ what it can provoke or instigate in society. However, the format of Lives does not focus on the independent value of art, but on the people behind its production. The paradox is that the artist is important because he is the one making the art, but there is such a significant focus on the individual that the importance of art is then grounded on the exceptional nature of being an artist and the characteristics that it entails. <BR><BR>
+
+
+
+
+  <div class="quote"> 
+
+“When the ability as well as the person of Michelangelo had grown in such a manner, that Domenico [his master], seeing him execute some works beyond the scope of a boy, was astonished, since it seemed to him that he not only surpassed the other disciples, of whom he had a great number, but very often equalled the things done by himself as master” </div>
+
+<BR>
+
+
+After a brief introduction committed to emphasise Michelangelo’s role in the fulfilment of the highest aspirations of mankind, the first chapter continues and revolves around the early life of the artist, who at this point in the plot is fourteen and has been sent to Florence as the apprentice of painter Domenico Ghirlandajo. The fact that Michelangelo could do as much as equal his master’s abilities transcends the concept of the relationship between the master and his apprentice<sup>(9)</sup>. 
+
+
+<div class="footnotes" style="float: left;"> 
+9. Diana Davies (editor), 1990, <u>Harrap’s Illustrated Dictionary of Art and Artists</u>, Harrap Books Limited.
+ </div>
+
+ Usually starting out as an early teen, an apprentice would normally help in the maintenance of the workspace; studio; and in tasks such as mixing pigments and preparing wooden panels for paintings. The next step would imply a closer relationship with the master’s working methods: copying drawings and paintings, casting sculptures and assisting with commissions. In this scheme, which is the basis of the Beaux Arts model, artistic practice is seen as a continuous process of learning in which the focus is not on personal inspiration or extraordinary character but on following the example of the master, who passes on the knowledge passed to him beforehand. Only by studying could an apprentice come to level their achievements, a system that values practice, historical continuity based on classical values and the accumulation of knowledge.
+<BR><BR>
+
+
+  <div class="quote"> 
+
+
+“ […]Michelangelo took that drawing and with a thicker pen outlined one of those women with new lineaments, in the manner that it should have been in order to be perfect. And it is a marvellous thing to see the difference between the two manners, and the judgment and excellence of a mere lad who was so spirited and bold, that he had the courage to correct the work of his master.” </div>
+
+<BR>
+
+Being bold enough to correct his master implies a fundamental understanding that allowed him to be brave enough to break the social <div class="footnotes"> 
+10. Parrinder, Monika, 2000, <a href="http://www.eyemagazine.com/feature/article/the-myth-of-genius"><u>The Myth of Genius</u></a>. Eye Magazine.
+ </div>
+
+
+structure inherent in the dynamics between a master and his student. Knowing something that others don’t is a consequence of possessing “universal knowledge”, a key characteristic of the genius artist<sup>(10)</sup>. 
+
+
+
+<BR><BR>
+
+
+
+  <div class="quote"> 
+
+
+“ […]when Domenico had returned and seen Michelangelo’s drawing, he said, “This boy knows more about it than I do;” and he was struck with amazement at the novel manner and the novel method of imitation that a mere boy of such tender age displayed by reason of the judgment bestowed upon him by Heaven, for these, in truth, were as marvellous as could have been looked for in the workmanship of a craftsman who had laboured for many years. And this was because all the power and knowledge of the gracious gifts of his nature were exercised by study and by the practice of art, wherefore these gifts produced every day fruits more divine in Michelangelo.“
+</div>
+
+<BR>
+
+
+
+Finally, Michelangelo surpassed the ability passed on by his master. If he could now do greater things that what those which he had been taught how to do, it means that there was another source of knowledge that went beyond that of his master – the omnipresent, fundamental understanding that Vasari refers to in his first paragraph and that qualified him to previously correct his master. While the value of the master-apprentice system is still mentioned, the focus is on how it was significantly more productive when applied to Michelangelo, to the point of matching those of somebody that had years of experience behind, like it was something “natural”, an unlearnt intuitive ability that hence cannot be analysed. 
+
+<BR><BR>
+
+
+The following chapter summarises Michaelangelo’s trajectory to Florence, where he stayed with Lorenzo de’Medici, until moving to Bologna, Florence and finally, Rome, where he would end up staying for most of his life. The remaining chapters are focused on a selection of his work, in which the reference to his almost effortless ability, divine grace and knowledge are a frequent occurrence, with the word “genius” being often used to summarise these characteristics. In one of the last chapters, titled Summary of Michelangelo’s last years; projects in Rome, his death, his patrons, associates, his poetry, and his personality Vasari puts again in words the greatness of the artist:
+<BR><BR>
+
+  <div class="quote"> 
+
+
+“Michelangelo had a strong vocation for the arts on which he laboured, and he succeeded in everything he did, no matter how difficult. (…) everything he made, whether with the brush or the chisel, defies imitation, and (as has been said) is imbued with such art, grace, and distinctive vitality that, if this can be said without offence, he has surpassed and vanquished the ancients, for the facility with which he achieved difficult effects was so great that they seem to have been created without effort, although anyone who tries to copy his work finds a great deal of effort is needed.” </div>
+
+<BR>
+
+The word “vocation”, even if nowadays used casually to refer to someone as being good at something, is curiously appropriate here. From the Latin “Vocatio”, it is a derivate from the verb “vocare”, that literally means “to call”. The idea that God has given Michelangelo a calling, a purpose, and consequently, the power to fulfil that purpose is tied to the conception that artists are supreme creatures capable of things others cannot. His “vocation”, obvious in everything he does, is, like God himself, omnipresent. By “defying imitation” and “vanquished the ancients” he is transcending the earthly aspects of his field, by achieving something so sublime that is goes beyond the scope of human ability and thus can only be done by himself, while at the same time overcoming historical value. The effortlessness in which he succeeds at everything also suggests that art is not seen simply as a human activity like others, one that has gained its established values through context and historical possibility, but as a natural, essential characteristic of the human species. 
+
+<BR><BR>
+
+
+  <div class="quote"> 
+
+“No one should think it strange that Michelangelo loves solitude, for he was deeply in love with his art, which claims a man with all this thoughts for itself alone. Anyone who wants to devote himself to the study of art must shun the society of others. In fact, a man who gives his time to the problems of art is never alone and never lacks food for thought, and those who attribute an artist’s love of solitude to outlandishness and eccentricity are mistaken, being that anyone who wants to do good work must rid himself of all cares and burdens: the artist most have time and opportunity for reflection and solitude and concentration.” </div>
+
+<BR>
+
+
+The inherent isolation of the artist is a result of the detachment of art from the banal, everyday world, as it has a greater purpose<sup>(11)</sup>. 
+
+<div class="footnotes"> 
+11. Winkel, Camiel Van. 2013, <u>The Myth of Artisthood</u>. Amsterdam: Mondriaan Fund.
+ </div>
+
+
+
+ Vasari goes beyond explaining the characteristics of Michelangelo, he creates a framework of values around artistry by presenting the seeking of solitude as an essential trait not just to Michelangelo, but to anyone involved in the making of art. The characteristics of Michelangelo are used as a model for being an artist. <BR><BR>
+
+
+Vasari’s personal admiration for Michelangelo was a major role in the way he is portrayed and therefore, perceived. Michelangelo was presented as not only being good at something, but as being generally superior because of it. Although art history has progressively detached itself from the heavily opinionated approach of Vasari in <i>Lives</i>, it still belongs in a wider sense to the humanities, a large scientific field whose purpose is the interpretation and understanding of human actions and intellectual work, while being in itself a human pursuit.  A certain degree of subjectivity is thus inherent to the profession, because it is a fundamental aspect of being human.<BR><BR>
+
+  <div class="quote"> 
+
+
+“Even a decision as simple as studying only one period in an artist’s career has consequences. Whether intended or not, it separates some of the work from the rest, and does so using the artist’s life to define the group. That such choices are made by art historians all the time is unavoidable, but they must be understood as choices. Objects do not come labeled this way.”</div>
+<div class="caption">Munsterberg, Marjorie, 2009, <u>Writing about Art - The Biography.  </u>Http://writingaboutart.org/pages/biography.html</div>
+
+<BR>
+
+
+Despite the remaining predominance of the archetype of the artist as having the characteristics associated with Michelangelo, it has not and it had been not the only one. In an essay titled ‘Art and reality from the standpoint of cultural anthropology’ from 1943, Margaret Mead explains that “[I]n primitive societies, the artist is not a separate person, having no immediate close relationship to the economic processes and everyday experiences of his society.”  The cult of the individual personality is a legacy of the content and format of Lives, as well as its technological possibility and availability, that has influenced not only the study of the Renaissance and the field of art history, but also  the public’s perception of the value, role and characteristics assigned to artists and their work. Moreover, due to art being not only a practice but a cultural product that is simultaneously the source and the audience of art history, it has an influence on the making of art in itself. <BR><BR>
+
+
+Curator Hans-Ulrich Obrist, In occasion of the launch of his book <i>Lives of the Artists, Lives of the architects</i> <sup>(12)</sup>, 
+<div class="footnotes" style="float: left;"> 
+ 12. in Volume Magazine, 2015, <u>Shelter</u>. Volume 46, Archis Foundation, Amsterdam, Arjen Oosterman (ed.) 
+ </div>
+
+
+
+
+
+ a nod to Vasari, elaborates on the duality of the perception of the artist and its impact: <BR><BR>
+
+  <div class="quote"> 
+
+“The concept of the artist whose gift sets him apart, or who only becomes an artist because his life history has set him apart, is almost wholly lacking. The artist, instead, is the person who does best something that other people, many other people, do less well. His products, whether he be a choreographer or dancer, flutist or pot-maker, or carver of the temple gate, are seen as differing in degree but not in kind from the achievements of the less gifted among his fellow citizens.The concept of the artist as different in kind is fatal to the development of any adequate artistic form that will satisfy all of the sensibilities which are developed in individuals reared under the impact of these forms.” </div>
+
+<BR>
+
+
+The idea of divine genius is a culturally determined concept, that has made its way into our collective consciousness. Giving the artist special qualities puts him on a pedestal where he cannot be judged by the values that we know, as he is above them, and thus cannot be subject to any sort of critical thinking that would, in turn, allow the adequate development of the creative practice. It represents an empty promise and an outdated concept of authorship. Lastly, the <i>“individuals reared under the impact of these forms”</i> could be extended to addressing more than an audience that is interested or directly exposed to the development of artistic forms, but everyone who is raised in a world where the social and cultural impact of art and visual culture is more and more prominent. 
+<center>
+
+  <br><br><br>
+
+<div class="fuckingtransition"> <a href="chapter2.html">Chapter 2 →</a></div>
+</center>
+
+  <BR><BR><BR><BR><BR><BR><BR><BR>  <BR><BR><BR><BR><BR><BR><BR><BR>
+  <BR><BR><BR><BR><BR><BR><BR><BR>
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+$( window ).on( "scrollstop" , function() {
+    snap();
+});
+</script>
+
+   
+    </body>
+    
+</html>
